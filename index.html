@@ -3,31 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Masa — Congelados Premium</title>
+<title>El de Siempre — Congelados Artesanales</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{
-    --black:#0a0a0a;--white:#fafaf8;--cream:#f4f0e8;--warm:#e8e0d0;
-    --accent:#c8440a;--accent2:#1a1a1a;--gray:#888;--border:#e0dcd4;
-    --r:14px;--rs:8px;
-  }
+  :root{--black:#0a0a0a;--white:#fafaf8;--cream:#f4f0e8;--warm:#e8e0d0;--accent:#c8440a;--gray:#888;--border:#e0dcd4;--r:14px;--rs:8px}
   body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
-  h1,h2,h3,.serif{font-family:'Fraunces',serif}
+  h1,h2,h3{font-family:'Fraunces',serif}
 
   /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 5vw}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 5vw}
   .nav-inner{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;cursor:pointer}
+  .logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;cursor:pointer;line-height:1.1}
   .logo span{color:var(--accent)}
+  .logo small{display:block;font-size:10px;font-weight:300;letter-spacing:2px;text-transform:uppercase;opacity:0.5;font-family:'DM Sans',sans-serif}
   .nav-links{display:flex;gap:28px;list-style:none}
   .nav-links a{font-size:14px;color:var(--black);text-decoration:none;opacity:0.7;cursor:pointer;transition:opacity 0.2s}
   .nav-links a:hover{opacity:1}
-  .nav-actions{display:flex;align-items:center;gap:12px}
+  .nav-actions{display:flex;align-items:center;gap:10px}
   .btn-nav{background:none;border:1.5px solid var(--border);border-radius:var(--rs);padding:7px 16px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
   .btn-nav:hover{background:var(--black);color:var(--white);border-color:var(--black)}
-  .cart-btn{position:relative;background:var(--black);color:var(--white);border:none;border-radius:var(--rs);padding:8px 18px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:6px;transition:all 0.2s}
+  .cart-btn{background:var(--black);color:var(--white);border:none;border-radius:var(--rs);padding:8px 18px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:6px;transition:all 0.2s}
   .cart-btn:hover{background:#222}
   .cart-count{background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:500}
 
@@ -35,7 +32,7 @@
   .page{display:none;padding-top:64px;min-height:100vh}
   .page.active{display:block}
 
-  /* HOME */
+  /* HERO */
   .hero{background:var(--black);color:var(--white);padding:100px 5vw 80px;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,68,10,0.15) 0%,transparent 70%);pointer-events:none}
   .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -45,8 +42,8 @@
   .hero-sub{font-size:17px;opacity:0.65;line-height:1.6;margin-bottom:36px;max-width:400px;font-weight:300}
   .btn-primary{background:var(--white);color:var(--black);border:none;border-radius:var(--r);padding:16px 32px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
   .btn-primary:hover{background:var(--cream);transform:translateY(-1px)}
-  .btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.3);border-radius:var(--r);padding:15px 32px;font-size:15px;font-weight:400;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;margin-left:12px}
-  .btn-secondary:hover{border-color:rgba(255,255,255,0.6)}
+  .btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.3);border-radius:var(--r);padding:15px 32px;font-size:15px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;margin-left:12px}
+  .btn-secondary:hover{border-color:rgba(255,255,255,0.7)}
   .hero-visual{display:flex;flex-direction:column;gap:16px}
   .hero-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:20px;cursor:pointer;transition:all 0.25s}
   .hero-card:hover{background:rgba(255,255,255,0.1);transform:translateX(-4px)}
@@ -54,7 +51,7 @@
   .hero-card h3{font-size:15px;margin-bottom:4px}
   .hero-card p{font-size:12px;opacity:0.5}
 
-  /* SECTION COMMON */
+  /* SECTIONS */
   section{padding:80px 5vw}
   .section-inner{max-width:1200px;margin:0 auto}
   .section-label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:500}
@@ -74,19 +71,20 @@
   /* PRODUCTS */
   .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .product-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all 0.25s}
-  .product-card:hover{transform:translateY(-4px);border-color:#ccc;box-shadow:0 20px 40px rgba(0,0,0,0.08)}
-  .product-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:var(--cream)}
+  .product-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+  .product-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:var(--cream);position:relative;overflow:hidden}
+  .product-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .product-img .emoji-fallback{font-size:64px;z-index:1}
   .product-info{padding:16px}
   .product-name{font-size:15px;font-weight:500;margin-bottom:4px}
   .product-desc{font-size:12px;color:var(--gray);margin-bottom:12px;line-height:1.4}
   .product-footer{display:flex;align-items:center;justify-content:space-between}
   .product-price{font-family:'Fraunces',serif;font-size:18px;font-weight:700}
-  .product-price span{font-size:12px;font-family:'DM Sans',sans-serif;color:var(--gray);font-weight:400}
   .add-btn{background:var(--black);color:var(--white);border:none;border-radius:var(--rs);width:34px;height:34px;font-size:18px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center}
   .add-btn:hover{background:var(--accent);transform:scale(1.05)}
   .badge-new{background:var(--accent);color:#fff;font-size:10px;padding:3px 8px;border-radius:100px;display:inline-block;margin-bottom:6px;letter-spacing:0.5px}
 
-  /* HOW */
+  /* HOW IT WORKS */
   .how-bg{background:var(--black);color:var(--white)}
   .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r);overflow:hidden}
   .step{padding:36px 28px;background:var(--black)}
@@ -112,13 +110,28 @@
   .benefit h3{font-size:15px;font-weight:500;margin-bottom:6px}
   .benefit p{font-size:13px;color:var(--gray);line-height:1.5}
 
-  /* CATERING */
-  .catering-banner{background:var(--accent);color:var(--white);border-radius:20px;padding:60px 60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  /* CATERING BANNER */
+  .catering-banner{background:var(--accent);color:var(--white);border-radius:20px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .catering-banner h2{font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-1px;margin-bottom:12px}
   .catering-banner p{opacity:0.8;line-height:1.6;font-weight:300}
-  .btn-white{background:var(--white);color:var(--accent);border:none;border-radius:var(--r);padding:14px 28px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:24px;transition:all 0.2s}
+  .btn-white{background:var(--white);color:var(--accent);border:none;border-radius:var(--r);padding:14px 28px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:24px;transition:all 0.2s;display:inline-block}
   .btn-white:hover{background:var(--cream)}
   .catering-img{text-align:center;font-size:80px;line-height:1}
+
+  /* CATERING FORM PAGE */
+  .catering-page{max-width:600px;margin:0 auto;padding:60px 20px}
+  .catering-page h2{font-size:32px;font-weight:700;margin-bottom:8px}
+  .catering-page .sub{color:var(--gray);margin-bottom:32px;font-size:15px;line-height:1.6}
+  .form-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px}
+  .form-group{margin-bottom:18px}
+  .form-group label{display:block;font-size:12px;font-weight:500;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray)}
+  .form-input,.form-select{width:100%;border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;background:var(--white);color:var(--black);appearance:none}
+  .form-input:focus,.form-select:focus{border-color:var(--black)}
+  .select-wrap{position:relative}
+  .select-wrap::after{content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--gray);pointer-events:none}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .btn-full{width:100%;background:var(--black);color:var(--white);border:none;border-radius:var(--r);padding:16px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;margin-top:8px}
+  .btn-full:hover{background:var(--accent)}
 
   /* FOOTER */
   footer{background:var(--black);color:var(--white);padding:60px 5vw 30px}
@@ -134,7 +147,7 @@
   /* CART SIDEBAR */
   .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;display:none;backdrop-filter:blur(4px)}
   .cart-overlay.open{display:block}
-  .cart-sidebar{position:fixed;right:0;top:0;bottom:0;width:400px;background:var(--white);z-index:201;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow:hidden}
+  .cart-sidebar{position:fixed;right:0;top:0;bottom:0;width:400px;background:var(--white);z-index:201;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column}
   .cart-sidebar.open{transform:translateX(0)}
   .cart-header{padding:24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
   .cart-header h3{font-size:18px;font-weight:600}
@@ -142,7 +155,8 @@
   .close-btn:hover{background:var(--black);color:var(--white)}
   .cart-items{flex:1;overflow-y:auto;padding:16px}
   .cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
-  .cart-item-img{width:56px;height:56px;background:var(--cream);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+  .cart-item-img{width:56px;height:56px;background:var(--cream);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;overflow:hidden}
+  .cart-item-img img{width:100%;height:100%;object-fit:cover}
   .cart-item-info{flex:1}
   .cart-item-name{font-size:14px;font-weight:500;margin-bottom:2px}
   .cart-item-price{font-size:13px;color:var(--gray)}
@@ -162,12 +176,14 @@
   .checkout-btn{width:100%;background:var(--black);color:var(--white);border:none;border-radius:var(--r);padding:16px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
   .checkout-btn:hover{background:var(--accent)}
 
-  /* MODAL: PRODUCT */
+  /* PRODUCT MODAL */
   .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px}
   .modal-overlay.open{display:flex}
-  .modal{background:var(--white);border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;animation:slideUp 0.3s ease}
+  .modal{background:var(--white);border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;animation:slideUp 0.3s ease;position:relative}
   @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  .modal-img{height:240px;display:flex;align-items:center;justify-content:center;font-size:80px;background:var(--cream);border-radius:20px 20px 0 0}
+  .modal-img{height:240px;display:flex;align-items:center;justify-content:center;font-size:80px;background:var(--cream);border-radius:20px 20px 0 0;overflow:hidden;position:relative}
+  .modal-img img{width:100%;height:100%;object-fit:cover}
+  .modal-img .emoji-big{font-size:80px;z-index:1}
   .modal-body{padding:28px}
   .modal-title{font-size:24px;font-weight:700;margin-bottom:6px;font-family:'Fraunces',serif}
   .modal-desc{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:20px}
@@ -178,86 +194,84 @@
   .qty-big-num{font-size:20px;font-weight:600;min-width:32px;text-align:center}
   .modal-add-btn{width:100%;background:var(--black);color:var(--white);border:none;border-radius:var(--r);padding:16px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
   .modal-add-btn:hover{background:var(--accent)}
-  .modal-close{float:right;background:none;border:1px solid var(--border);border-radius:var(--rs);width:36px;height:36px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;margin:0;position:absolute;top:16px;right:16px}
+  .modal-close{background:none;border:1px solid var(--border);border-radius:var(--rs);width:36px;height:36px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;position:absolute;top:16px;right:16px;z-index:10}
   .modal-close:hover{background:var(--black);color:var(--white)}
 
-  /* CHECKOUT PAGE */
-  .checkout-layout{max-width:1100px;margin:0 auto;padding:40px 5vw;display:grid;grid-template-columns:1fr 380px;gap:40px;min-height:calc(100vh - 64px)}
-  .checkout-steps{display:flex;gap:0;margin-bottom:32px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-  .ck-step{flex:1;padding:14px;text-align:center;font-size:13px;background:var(--cream);border-right:1px solid var(--border);cursor:pointer;transition:all 0.2s}
+  /* CHECKOUT */
+  .checkout-layout{max-width:1100px;margin:0 auto;padding:40px 5vw;display:grid;grid-template-columns:1fr 380px;gap:40px}
+  .checkout-steps{display:flex;margin-bottom:32px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+  .ck-step{flex:1;padding:14px;text-align:center;font-size:13px;background:var(--cream);border-right:1px solid var(--border);transition:all 0.2s}
   .ck-step:last-child{border-right:none}
   .ck-step.active{background:var(--black);color:var(--white)}
   .ck-step.done{background:var(--accent);color:var(--white)}
-  .form-group{margin-bottom:16px}
-  .form-group label{display:block;font-size:12px;font-weight:500;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray)}
-  .form-input{width:100%;border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;background:var(--white);color:var(--black)}
-  .form-input:focus{border-color:var(--black)}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .section-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:16px}
-  .section-card h3{font-size:16px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .section-card h3{font-size:16px;font-weight:600;margin-bottom:16px}
   .delivery-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
   .delivery-opt{border:1.5px solid var(--border);border-radius:var(--rs);padding:14px;cursor:pointer;transition:all 0.2s}
   .delivery-opt.selected{border-color:var(--black);background:#f8f8f6}
   .delivery-opt h4{font-size:13px;font-weight:500;margin-bottom:2px}
   .delivery-opt p{font-size:11px;color:var(--gray)}
   .pay-opts{display:flex;flex-direction:column;gap:8px}
-  .pay-opt{border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all 0.2s;font-size:13px}
+  .pay-opt{border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:13px;transition:all 0.2s}
   .pay-opt.selected{border-color:var(--black)}
   .pay-icon{font-size:20px;width:28px;text-align:center}
-
-  /* ORDER SUMMARY SIDEBAR */
   .order-summary{background:var(--cream);border-radius:var(--r);padding:24px;position:sticky;top:80px}
   .order-summary h3{font-size:16px;font-weight:600;margin-bottom:16px}
   .oi-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:10px;align-items:center}
   .oi-name{display:flex;align-items:center;gap:8px}
-  .oi-emoji{width:28px;height:28px;background:var(--white);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:14px}
-  .oi-total{font-weight:700;font-size:15px;border-top:1px solid var(--border);padding-top:12px;margin-top:8px}
+  .oi-emoji{width:28px;height:28px;background:var(--white);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:14px;overflow:hidden}
+  .oi-emoji img{width:100%;height:100%;object-fit:cover}
+  .oi-total{font-weight:700;font-size:15px;border-top:1px solid var(--border);padding-top:12px;margin-top:8px;display:flex;justify-content:space-between}
 
   /* CONFIRM */
   .confirm-page{max-width:560px;margin:0 auto;padding:80px 20px;text-align:center}
   .confirm-check{width:72px;height:72px;background:#16a34a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 24px;color:#fff}
-  .confirm-page h2{font-size:28px;font-weight:700;margin-bottom:8px;font-family:'Fraunces',serif}
+  .confirm-page h2{font-size:28px;font-weight:700;margin-bottom:8px}
   .confirm-page p{color:var(--gray);margin-bottom:24px;line-height:1.6}
   .order-num{background:var(--cream);border-radius:var(--r);padding:16px 24px;font-family:'Fraunces',serif;font-size:20px;font-weight:700;display:inline-block;margin-bottom:24px}
 
   /* AUTH */
   .auth-page{max-width:420px;margin:0 auto;padding:60px 20px}
-  .auth-page h2{font-size:28px;font-weight:700;margin-bottom:6px;font-family:'Fraunces',serif}
+  .auth-page h2{font-size:28px;font-weight:700;margin-bottom:6px}
   .auth-page p{color:var(--gray);margin-bottom:28px;font-size:14px}
   .auth-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:32px}
-  .auth-toggle{display:flex;gap:0;background:var(--cream);border-radius:var(--rs);padding:4px;margin-bottom:24px}
-  .auth-tab{flex:1;padding:9px;text-align:center;border-radius:var(--rs);font-size:13px;cursor:pointer;transition:all 0.2s;border:none;background:none;font-family:'DM Sans',sans-serif}
+  .auth-toggle{display:flex;background:var(--cream);border-radius:var(--rs);padding:4px;margin-bottom:24px}
+  .auth-tab{flex:1;padding:9px;text-align:center;border-radius:var(--rs);font-size:13px;cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;transition:all 0.2s}
   .auth-tab.active{background:var(--white);box-shadow:0 1px 4px rgba(0,0,0,0.1);font-weight:500}
-  .btn-full{width:100%;background:var(--black);color:var(--white);border:none;border-radius:var(--r);padding:15px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;margin-top:8px}
-  .btn-full:hover{background:var(--accent)}
   .divider{text-align:center;font-size:12px;color:var(--gray);margin:16px 0;position:relative}
   .divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border)}
   .divider span{background:var(--white);padding:0 12px;position:relative}
-  .auth-link{color:var(--accent);cursor:pointer;text-decoration:none;font-size:13px}
 
   /* ACCOUNT */
   .account-layout{max-width:1100px;margin:0 auto;padding:40px 5vw;display:grid;grid-template-columns:240px 1fr;gap:32px}
   .account-nav{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;height:fit-content;position:sticky;top:80px}
   .account-nav-item{padding:10px 14px;border-radius:var(--rs);font-size:13px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:10px}
   .account-nav-item:hover,.account-nav-item.active{background:var(--black);color:var(--white)}
-  .account-nav-item span{font-size:16px}
   .order-row{border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
   .order-status{font-size:11px;padding:4px 10px;border-radius:100px;font-weight:500}
   .status-delivered{background:#dcfce7;color:#16a34a}
   .status-processing{background:#fef9c3;color:#a16207}
   .status-pending{background:#fee2e2;color:#dc2626}
 
-  /* ADMIN */
-  .admin-layout{max-width:1200px;margin:0 auto;padding:24px 5vw}
-  .admin-header{background:var(--black);color:var(--white);margin:-24px -5vw 0;padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+  /* ADMIN LOGIN */
+  .admin-login{max-width:380px;margin:0 auto;padding:80px 20px;text-align:center}
+  .admin-login h2{font-size:28px;font-weight:700;margin-bottom:8px}
+  .admin-login p{color:var(--gray);margin-bottom:28px;font-size:14px}
+  .lock-icon{font-size:48px;margin-bottom:20px}
+
+  /* ADMIN PANEL */
+  .admin-wrap{max-width:1200px;margin:0 auto;padding:0 5vw 40px}
+  .admin-topbar{background:var(--black);color:var(--white);padding:0 5vw;height:56px;display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+  .admin-topbar-title{font-family:'Fraunces',serif;font-size:17px}
   .admin-nav{display:flex;gap:4px}
-  .admin-nav-item{padding:8px 16px;border-radius:var(--rs);font-size:13px;cursor:pointer;transition:all 0.2s;color:rgba(255,255,255,0.6)}
+  .admin-nav-item{padding:7px 14px;border-radius:var(--rs);font-size:13px;cursor:pointer;color:rgba(255,255,255,0.6);transition:all 0.2s}
   .admin-nav-item:hover,.admin-nav-item.active{background:rgba(255,255,255,0.1);color:#fff}
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
   .stat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px}
   .stat-label{font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
   .stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700}
   .stat-change{font-size:12px;color:#16a34a;margin-top:4px}
+  .stat-change.down{color:#dc2626}
   .admin-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
   .admin-table th{text-align:left;padding:12px 16px;font-size:11px;text-transform:uppercase;letter-spacing:1px;background:var(--cream);border-bottom:1px solid var(--border);color:var(--gray)}
   .admin-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--border)}
@@ -265,10 +279,26 @@
   .admin-table tr:hover td{background:#fafaf8}
   .edit-btn{background:none;border:1px solid var(--border);border-radius:var(--rs);padding:5px 12px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
   .edit-btn:hover{background:var(--black);color:var(--white)}
+  .admin-section-title{font-size:16px;font-weight:600;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+  .chart-bar-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:20px}
+  .chart-bars{display:flex;align-items:flex-end;gap:8px;height:120px;margin-top:16px}
+  .chart-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .chart-bar{width:100%;background:var(--black);border-radius:4px 4px 0 0;transition:all 0.3s;cursor:pointer;min-height:4px}
+  .chart-bar:hover{background:var(--accent)}
+  .chart-label{font-size:10px;color:var(--gray)}
+  .chart-val{font-size:10px;font-weight:500}
+  .product-edit-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:12px;display:flex;align-items:center;gap:16px}
+  .product-edit-img{width:64px;height:64px;background:var(--cream);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;overflow:hidden}
+  .product-edit-img img{width:100%;height:100%;object-fit:cover}
+  .product-edit-info{flex:1}
+  .product-edit-name{font-size:15px;font-weight:500;margin-bottom:4px}
+  .product-edit-cat{font-size:12px;color:var(--gray)}
+  .product-edit-actions{display:flex;gap:8px;align-items:center}
+  .price-input{border:1.5px solid var(--border);border-radius:var(--rs);padding:6px 10px;font-size:14px;font-family:'Fraunces',serif;font-weight:700;width:90px;outline:none;text-align:center}
+  .price-input:focus{border-color:var(--black)}
 
   /* SEARCH */
-  .search-bar-wrap{max-width:1200px;margin:0 auto;padding:24px 0 0}
-  .search-bar{width:100%;border:2px solid var(--border);border-radius:var(--r);padding:14px 20px;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s}
+  .search-bar{width:100%;border:2px solid var(--border);border-radius:var(--r);padding:14px 20px;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;margin-bottom:20px}
   .search-bar:focus{border-color:var(--black)}
 
   /* TOAST */
@@ -276,37 +306,33 @@
   .toast.show{transform:translateX(-50%) translateY(0)}
 
   /* WHATSAPP */
-  .wa-btn{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:all 0.2s;font-size:24px}
+  .wa-btn{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:all 0.2s;font-size:24px;text-decoration:none}
   .wa-btn:hover{transform:scale(1.1)}
 
   /* RESPONSIVE */
   @media(max-width:900px){
-    .hero-inner{grid-template-columns:1fr}
+    .hero-inner,.checkout-layout,.account-layout{grid-template-columns:1fr}
     .hero-visual{display:none}
     .cats-grid{grid-template-columns:repeat(3,1fr)}
     .products-grid{grid-template-columns:repeat(2,1fr)}
     .steps-grid{grid-template-columns:repeat(2,1fr)}
-    .reviews-grid{grid-template-columns:1fr}
-    .benefits-grid{grid-template-columns:repeat(2,1fr)}
+    .reviews-grid,.benefits-grid{grid-template-columns:1fr 1fr}
     .footer-grid{grid-template-columns:1fr 1fr}
     .catering-banner{grid-template-columns:1fr;text-align:center}
-    .checkout-layout{grid-template-columns:1fr}
-    .account-layout{grid-template-columns:1fr}
     .stats-grid{grid-template-columns:repeat(2,1fr)}
     .cart-sidebar{width:100%}
   }
   @media(max-width:600px){
     .cats-grid{grid-template-columns:repeat(2,1fr)}
     .products-grid{grid-template-columns:1fr}
-    .steps-grid{grid-template-columns:1fr}
-    .benefits-grid{grid-template-columns:1fr}
+    .steps-grid,.reviews-grid,.benefits-grid{grid-template-columns:1fr}
     .footer-grid{grid-template-columns:1fr}
     .nav-links{display:none}
     .form-row{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr}
   }
   .empty-cart{text-align:center;padding:48px 20px;color:var(--gray)}
-  .empty-cart-icon{font-size:48px;margin-bottom:12px}
-  .empty-cart p{font-size:14px}
+  .tag-catering{background:#eff6ff;color:#1d4ed8;font-size:11px;padding:3px 8px;border-radius:100px;font-weight:500}
 </style>
 </head>
 <body>
@@ -314,36 +340,30 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="logo" onclick="showPage('home')">La <span>Masa</span></div>
+    <div class="logo" onclick="showPage('home')">
+      El de <span>Siempre</span>
+      <small>Congelados artesanales</small>
+    </div>
     <ul class="nav-links">
       <li><a onclick="showPage('shop')">Productos</a></li>
       <li><a onclick="showPage('shop')">Categorías</a></li>
-      <li><a onclick="showPage('home');scrollTo(0,2000)">Catering</a></li>
-      <li><a onclick="showPage('home');scrollTo(0,3000)">Nosotros</a></li>
+      <li><a onclick="showPage('catering')">Catering</a></li>
+      <li><a onclick="scrollToNosotros()">Nosotros</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="btn-nav" onclick="showPage('admin')" style="font-size:11px;opacity:0.6">Admin</button>
       <button class="btn-nav" onclick="showPage('auth')">Ingresar</button>
-      <button class="cart-btn" onclick="openCart()">
-        🛒 Carrito <span class="cart-count" id="cartCount">0</span>
-      </button>
+      <button class="cart-btn" onclick="openCart()">🛒 Carrito <span class="cart-count" id="cartCount">0</span></button>
     </div>
   </div>
 </nav>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
-
-<!-- WHATSAPP -->
-<div class="wa-btn" onclick="alert('WhatsApp: +54 11 5555-1234')">💬</div>
+<a class="wa-btn" href="https://wa.me/5491155551234" target="_blank">💬</a>
 
 <!-- CART SIDEBAR -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <h3>Tu carrito</h3>
-    <button class="close-btn" onclick="closeCart()">×</button>
-  </div>
+  <div class="cart-header"><h3>Tu carrito</h3><button class="close-btn" onclick="closeCart()">×</button></div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-footer">
     <div class="coupon-row">
@@ -352,7 +372,7 @@
     </div>
     <div class="totals-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
     <div class="totals-row"><span>Envío</span><span>$800</span></div>
-    <div id="discountRow" style="display:none" class="totals-row"><span style="color:#16a34a">Descuento</span><span style="color:#16a34a" id="discountAmt">-$0</span></div>
+    <div id="discountRow" style="display:none" class="totals-row"><span style="color:#16a34a">Descuento</span><span style="color:#16a34a" id="discountAmt"></span></div>
     <div class="totals-total"><span>Total</span><span id="cartTotal">$0</span></div>
     <button class="checkout-btn" onclick="goCheckout()">Finalizar compra →</button>
   </div>
@@ -360,7 +380,7 @@
 
 <!-- PRODUCT MODAL -->
 <div class="modal-overlay" id="productModal">
-  <div class="modal" style="position:relative">
+  <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
     <div class="modal-img" id="modalImg"></div>
     <div class="modal-body">
@@ -378,33 +398,21 @@
   </div>
 </div>
 
-<!-- ===== HOME PAGE ===== -->
+<!-- ===== HOME ===== -->
 <div class="page active" id="page-home">
   <section class="hero">
     <div class="hero-inner">
       <div>
         <div class="hero-tag">Envíos en CABA y GBA</div>
         <h1 class="hero-title">Comida casera<br><em>lista para</em><br>calentar</h1>
-        <p class="hero-sub">Pizzas, empanadas y tartas artesanales. Congeladas en el punto justo para que disfrutes en casa cuando quieras.</p>
+        <p class="hero-sub">Pizzas, empanadas y tartas artesanales. Congeladas en el punto justo para que disfrutes cuando quieras.</p>
         <button class="btn-primary" onclick="showPage('shop')">Ver productos →</button>
-        <button class="btn-secondary" onclick="showPage('home');setTimeout(()=>document.querySelector('.catering-banner').scrollIntoView({behavior:'smooth'}),100)">Catering</button>
+        <button class="btn-secondary" onclick="showPage('catering')">Catering</button>
       </div>
       <div class="hero-visual">
-        <div class="hero-card" onclick="filterAndShow('Pizzas')">
-          <div class="hero-card-emoji">🍕</div>
-          <h3>Pizzas artesanales</h3>
-          <p>Masa madre, levado lento</p>
-        </div>
-        <div class="hero-card" onclick="filterAndShow('Empanadas')">
-          <div class="hero-card-emoji">🥟</div>
-          <h3>Empanadas criollas</h3>
-          <p>Receta familiar, 12 variedades</p>
-        </div>
-        <div class="hero-card" onclick="filterAndShow('Tartas')">
-          <div class="hero-card-emoji">🥧</div>
-          <h3>Tartas caseras</h3>
-          <p>Con y sin tapa, saladas y dulces</p>
-        </div>
+        <div class="hero-card" onclick="filterAndShow('Pizzas')"><div class="hero-card-emoji">🍕</div><h3>Pizzas artesanales</h3><p>Masa madre, levado lento</p></div>
+        <div class="hero-card" onclick="filterAndShow('Empanadas')"><div class="hero-card-emoji">🥟</div><h3>Empanadas criollas</h3><p>Receta familiar, 12 variedades</p></div>
+        <div class="hero-card" onclick="filterAndShow('Tartas')"><div class="hero-card-emoji">🥧</div><h3>Tartas caseras</h3><p>Con y sin tapa, saladas y dulces</p></div>
       </div>
     </div>
   </section>
@@ -433,9 +441,9 @@
       <h2 class="section-title" style="color:#fff">¿Cómo funciona?</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.5)">Cuatro pasos para tener comida lista en casa</p>
       <div class="steps-grid">
-        <div class="step"><div class="step-num">01</div><h3>Elegís</h3><p>Navegás el catálogo y seleccionás lo que querés. Podés filtrar por categoría o buscar directo.</p></div>
+        <div class="step"><div class="step-num">01</div><h3>Elegís</h3><p>Navegás el catálogo y seleccionás lo que querés. Filtrás por categoría o buscás directo.</p></div>
         <div class="step"><div class="step-num">02</div><h3>Pedís</h3><p>Completás el checkout en menos de 2 minutos. Pagás con tarjeta, transferencia o efectivo.</p></div>
-        <div class="step"><div class="step-num">03</div><h3>Llega</h3><p>Te lo enviamos congelado y bien embalado a domicilio o retirás en nuestro local.</p></div>
+        <div class="step"><div class="step-num">03</div><h3>Llega</h3><p>Te lo enviamos congelado y bien embalado o retirás en nuestro local en Palermo.</p></div>
         <div class="step"><div class="step-num">04</div><h3>Disfrutás</h3><p>Calentás en horno o microondas y tenés comida casera lista al instante.</p></div>
       </div>
     </div>
@@ -448,7 +456,7 @@
       <p class="section-sub">Cocinamos con ingredientes frescos y mucho amor</p>
       <div class="benefits-grid">
         <div class="benefit"><div class="benefit-icon">🧑‍🍳</div><h3>100% artesanal</h3><p>Cada producto es hecho a mano en nuestra cocina con recetas propias.</p></div>
-        <div class="benefit"><div class="benefit-icon">❄️</div><h3>Congelado óptimo</h3><p>Utilizamos congelado rápido para mantener sabor y nutrientes.</p></div>
+        <div class="benefit"><div class="benefit-icon">❄️</div><h3>Congelado óptimo</h3><p>Congelado rápido para mantener sabor y nutrientes al máximo.</p></div>
         <div class="benefit"><div class="benefit-icon">🚚</div><h3>Envío en el día</h3><p>Pedidos antes de las 14h llegan el mismo día en CABA.</p></div>
         <div class="benefit"><div class="benefit-icon">✅</div><h3>Sin aditivos</h3><p>Sin conservantes ni colorantes. Solo ingredientes reales.</p></div>
       </div>
@@ -459,23 +467,23 @@
     <div class="section-inner">
       <div class="section-label">Lo que dicen</div>
       <h2 class="section-title">Clientes felices</h2>
-      <p class="section-sub">Más de 2.000 familias ya confían en La Masa</p>
+      <p class="section-sub">Más de 2.000 familias ya confían en El de Siempre</p>
       <div class="reviews-grid">
-        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Las empanadas son increíbles. Las tengo siempre en el freezer para cuando llegan visitas. Calidad de restaurant en casa."</p><div class="reviewer"><div class="reviewer-avatar">MG</div><div><div class="reviewer-name">María González</div><div class="reviewer-loc">Palermo, CABA</div></div></div></div>
-        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Pedí para el cumpleaños de mi hijo y todo el mundo preguntó dónde había comprado. La pizza de muzzarella, una maravilla."</p><div class="reviewer"><div class="reviewer-avatar">JP</div><div><div class="reviewer-name">Juan Pablo Rodríguez</div><div class="reviewer-loc">San Isidro, GBA</div></div></div></div>
-        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Contraté el catering para una reunión de empresa de 40 personas. Puntualidad, presentación y sabor impecables. Los recomiendo."</p><div class="reviewer"><div class="reviewer-avatar">CL</div><div><div class="reviewer-name">Carolina López</div><div class="reviewer-loc">Microcentro, CABA</div></div></div></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Las empanadas son increíbles. Las tengo siempre en el freezer. Calidad de restaurant en casa."</p><div class="reviewer"><div class="reviewer-avatar">MG</div><div><div class="reviewer-name">María González</div><div class="reviewer-loc">Palermo, CABA</div></div></div></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Pedí para el cumpleaños de mi hijo y todo el mundo preguntó dónde había comprado. La pizza, una maravilla."</p><div class="reviewer"><div class="reviewer-avatar">JP</div><div><div class="reviewer-name">Juan Pablo Rodríguez</div><div class="reviewer-loc">San Isidro, GBA</div></div></div></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Contraté el catering para 40 personas. Puntualidad, presentación y sabor impecables. Los recomiendo siempre."</p><div class="reviewer"><div class="reviewer-avatar">CL</div><div><div class="reviewer-name">Carolina López</div><div class="reviewer-loc">Microcentro, CABA</div></div></div></div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="nosotros">
     <div class="section-inner">
       <div class="catering-banner">
         <div>
           <div class="section-label" style="color:rgba(255,255,255,0.6)">Para eventos</div>
           <h2>¿Organizás un evento?</h2>
-          <p>Tenemos paquetes de catering para reuniones, cumpleaños, empresas y casamientos. Armamos el menú a tu medida.</p>
-          <button class="btn-white" onclick="alert('¡Gracias! Te contactaremos pronto.\nWhatsApp: +54 11 5555-1234')">Consultar catering →</button>
+          <p>Tenemos paquetes de catering para reuniones, cumpleaños, empresas y casamientos. Pizza party, asado, menú a medida y mucho más.</p>
+          <button class="btn-white" onclick="showPage('catering')">Consultar catering →</button>
         </div>
         <div class="catering-img">🎉</div>
       </div>
@@ -486,42 +494,22 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">La <span>Masa</span></div>
+          <div class="logo" style="color:#fff">El de <span>Siempre</span></div>
           <p>Comida artesanal congelada para disfrutar en casa. Calidad de restaurant, comodidad de delivery.</p>
         </div>
-        <div class="footer-col">
-          <h4>Productos</h4>
-          <ul>
-            <li onclick="filterAndShow('Pizzas')">Pizzas</li>
-            <li onclick="filterAndShow('Empanadas')">Empanadas</li>
-            <li onclick="filterAndShow('Tartas')">Tartas</li>
-            <li onclick="filterAndShow('Carnes')">Carnes</li>
-            <li onclick="filterAndShow('Congelados')">Congelados</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Empresa</h4>
-          <ul><li>Nosotros</li><li>Blog</li><li>Trabaja con nosotros</li><li>Catering</li></ul>
-        </div>
-        <div class="footer-col">
-          <h4>Ayuda</h4>
-          <ul><li>Preguntas frecuentes</li><li>Envíos</li><li>Devoluciones</li><li>Contacto</li></ul>
-        </div>
+        <div class="footer-col"><h4>Productos</h4><ul><li onclick="filterAndShow('Pizzas')">Pizzas</li><li onclick="filterAndShow('Empanadas')">Empanadas</li><li onclick="filterAndShow('Tartas')">Tartas</li><li onclick="filterAndShow('Carnes')">Carnes</li><li onclick="filterAndShow('Congelados')">Congelados</li></ul></div>
+        <div class="footer-col"><h4>Empresa</h4><ul><li>Nosotros</li><li onclick="showPage('catering')">Catering</li><li>Blog</li><li>Trabaja con nosotros</li></ul></div>
+        <div class="footer-col"><h4>Ayuda</h4><ul><li>Preguntas frecuentes</li><li>Envíos</li><li>Devoluciones</li><li>Contacto</li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2024 La Masa. Todos los derechos reservados.</span>
-        <span>Hecho con ❤️ en Buenos Aires</span>
-      </div>
+      <div class="footer-bottom"><span>© 2024 El de Siempre. Todos los derechos reservados.</span><span>Hecho con ❤️ en Buenos Aires</span></div>
     </div>
   </footer>
 </div>
 
-<!-- ===== SHOP PAGE ===== -->
+<!-- ===== SHOP ===== -->
 <div class="page" id="page-shop">
-  <div class="section-inner" style="padding:32px 5vw 0">
-    <div class="search-bar-wrap" style="padding:0 0 20px">
-      <input class="search-bar" placeholder="Buscar productos... (pizza, empanada, tarta...)" oninput="filterProducts(this.value)" id="searchInput">
-    </div>
+  <div style="max-width:1200px;margin:0 auto;padding:32px 5vw 60px">
+    <input class="search-bar" placeholder="Buscar productos..." oninput="filterProducts(this.value)" id="searchInput">
     <div class="cats-grid" id="shopCats" style="margin-bottom:32px"></div>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
       <div class="section-title" style="font-size:24px" id="shopTitle">Todos los productos</div>
@@ -531,7 +519,50 @@
   </div>
 </div>
 
-<!-- ===== CHECKOUT PAGE ===== -->
+<!-- ===== CATERING FORM ===== -->
+<div class="page" id="page-catering">
+  <div class="catering-page">
+    <div style="font-size:48px;margin-bottom:16px">🎉</div>
+    <h2>Catering y eventos</h2>
+    <p class="sub">Completá el formulario y te contactamos en menos de 2 horas para armar el menú ideal para tu evento.</p>
+    <div class="form-card">
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input class="form-input" placeholder="Tu nombre" id="ctName">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input class="form-input" placeholder="+54 11 0000-0000" id="ctPhone" type="tel">
+        </div>
+        <div class="form-group">
+          <label>Personas invitadas</label>
+          <input class="form-input" placeholder="Ej: 40" id="ctGuests" type="number" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Zona del evento</label>
+        <input class="form-input" placeholder="Ej: Palermo, CABA" id="ctZone">
+      </div>
+      <div class="form-group">
+        <label>Tipo de evento</label>
+        <div class="select-wrap">
+          <select class="form-select" id="ctType">
+            <option value="">Seleccioná una opción...</option>
+            <option value="pizza_party">🍕 Pizza party</option>
+            <option value="pizza_premium">✨ Pizza premium</option>
+            <option value="asado">🥩 Asado</option>
+            <option value="menu_medida">🍽️ Menú a medida</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-full" onclick="submitCatering()">Enviar consulta →</button>
+      <p style="font-size:12px;color:var(--gray);text-align:center;margin-top:12px">También podés escribirnos directo por WhatsApp</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT ===== -->
 <div class="page" id="page-checkout">
   <div class="checkout-layout">
     <div>
@@ -548,10 +579,10 @@
             <div class="form-group"><label>Nombre</label><input class="form-input" placeholder="Juan" id="ckName"></div>
             <div class="form-group"><label>Apellido</label><input class="form-input" placeholder="García" id="ckLast"></div>
           </div>
-          <div class="form-group"><label>Email</label><input class="form-input" placeholder="juan@email.com" id="ckEmail" type="email"></div>
-          <div class="form-group"><label>Teléfono</label><input class="form-input" placeholder="+54 11 0000-0000" id="ckPhone"></div>
+          <div class="form-group"><label>Email</label><input class="form-input" placeholder="juan@email.com" type="email"></div>
+          <div class="form-group"><label>Teléfono</label><input class="form-input" placeholder="+54 11 0000-0000"></div>
         </div>
-        <button class="checkout-btn" style="max-width:100%" onclick="ckNext(2)">Continuar →</button>
+        <button class="checkout-btn" onclick="ckNext(2)">Continuar →</button>
       </div>
       <div id="ckStep3" style="display:none">
         <div class="section-card">
@@ -562,31 +593,30 @@
           </div>
         </div>
         <div class="section-card" id="addressCard">
-          <h3>📍 Dirección de entrega</h3>
+          <h3>📍 Dirección</h3>
           <div class="form-group"><label>Calle y número</label><input class="form-input" placeholder="Av. Corrientes 1234"></div>
           <div class="form-row">
             <div class="form-group"><label>Ciudad</label><input class="form-input" placeholder="Buenos Aires"></div>
             <div class="form-group"><label>Piso/Depto</label><input class="form-input" placeholder="3°B"></div>
           </div>
-          <div class="form-group"><label>Notas para el repartidor</label><input class="form-input" placeholder="Tocar timbre 2 veces"></div>
         </div>
-        <button class="checkout-btn" style="max-width:100%" onclick="ckNext(3)">Continuar →</button>
+        <button class="checkout-btn" onclick="ckNext(3)">Continuar →</button>
       </div>
       <div id="ckStep4" style="display:none">
         <div class="section-card">
           <h3>💳 Medio de pago</h3>
           <div class="pay-opts">
-            <div class="pay-opt selected" onclick="selectPay(this)"><div class="pay-icon">💳</div><div><div style="font-weight:500">Tarjeta de crédito/débito</div><div style="font-size:11px;color:var(--gray)">Visa, Mastercard, American Express</div></div></div>
+            <div class="pay-opt selected" onclick="selectPay(this)"><div class="pay-icon">💳</div><div><div style="font-weight:500">Tarjeta de crédito/débito</div><div style="font-size:11px;color:var(--gray)">Visa, Mastercard, Amex</div></div></div>
             <div class="pay-opt" onclick="selectPay(this)"><div class="pay-icon">🏦</div><div><div style="font-weight:500">Transferencia bancaria</div><div style="font-size:11px;color:var(--gray)">10% de descuento</div></div></div>
             <div class="pay-opt" onclick="selectPay(this)"><div class="pay-icon">💚</div><div><div style="font-weight:500">Mercado Pago</div><div style="font-size:11px;color:var(--gray)">Hasta 12 cuotas sin interés</div></div></div>
-            <div class="pay-opt" onclick="selectPay(this)"><div class="pay-icon">💵</div><div><div style="font-weight:500">Efectivo al entregar</div><div style="font-size:11px;color:var(--gray)">Solo para retiro en local</div></div></div>
+            <div class="pay-opt" onclick="selectPay(this)"><div class="pay-icon">💵</div><div><div style="font-weight:500">Efectivo al entregar</div><div style="font-size:11px;color:var(--gray)">Solo retiro en local</div></div></div>
           </div>
         </div>
-        <button class="checkout-btn" style="max-width:100%;background:var(--accent)" onclick="confirmOrder()">✓ Confirmar pedido</button>
+        <button class="checkout-btn" style="background:var(--accent)" onclick="confirmOrder()">✓ Confirmar pedido</button>
       </div>
     </div>
     <div class="order-summary">
-      <h3>Resumen del pedido</h3>
+      <h3>Resumen</h3>
       <div id="orderSummaryItems"></div>
       <div class="totals-row" style="margin-top:12px"><span>Subtotal</span><span id="summarySubtotal">$0</span></div>
       <div class="totals-row"><span>Envío</span><span>$800</span></div>
@@ -595,25 +625,22 @@
   </div>
 </div>
 
-<!-- ===== CONFIRM PAGE ===== -->
+<!-- ===== CONFIRM ===== -->
 <div class="page" id="page-confirm">
   <div class="confirm-page">
     <div class="confirm-check">✓</div>
     <h2>¡Pedido confirmado!</h2>
-    <p>Te enviamos la confirmación a tu email. Recibirás un mensaje de WhatsApp cuando tu pedido esté en camino.</p>
-    <div class="order-num" id="orderNum">#LA-00001</div>
-    <br>
-    <button class="btn-full" style="max-width:240px;margin:0 auto" onclick="showPage('home')">Volver al inicio</button>
-    <br><br>
-    <button class="btn-nav" onclick="showPage('account')">Ver mis pedidos</button>
+    <p>Te enviamos la confirmación a tu email. Te avisamos por WhatsApp cuando salga para entrega.</p>
+    <div class="order-num" id="orderNum">#EDS-00001</div><br>
+    <button class="btn-full" style="max-width:220px;margin:0 auto" onclick="showPage('home')">Volver al inicio</button>
   </div>
 </div>
 
-<!-- ===== AUTH PAGE ===== -->
+<!-- ===== AUTH ===== -->
 <div class="page" id="page-auth">
   <div class="auth-page">
     <h2>Bienvenido/a</h2>
-    <p>Ingresá a tu cuenta para gestionar tus pedidos y datos</p>
+    <p>Ingresá a tu cuenta para gestionar tus pedidos</p>
     <div class="auth-card">
       <div class="auth-toggle">
         <button class="auth-tab active" onclick="switchAuth('login',this)">Ingresar</button>
@@ -622,10 +649,9 @@
       <div id="authLogin">
         <div class="form-group"><label>Email</label><input class="form-input" placeholder="tu@email.com" type="email"></div>
         <div class="form-group"><label>Contraseña</label><input class="form-input" placeholder="••••••••" type="password"></div>
-        <div style="text-align:right;margin-bottom:12px"><a class="auth-link">Olvidé mi contraseña</a></div>
         <button class="btn-full" onclick="doLogin()">Ingresar →</button>
-        <div class="divider"><span>o continuá con</span></div>
-        <button class="btn-nav" style="width:100%;justify-content:center;display:flex;gap:6px" onclick="doLogin()">🌐 Google</button>
+        <div class="divider"><span>o</span></div>
+        <button class="btn-nav" style="width:100%;display:flex;justify-content:center;gap:6px" onclick="doLogin()">🌐 Continuar con Google</button>
       </div>
       <div id="authRegister" style="display:none">
         <div class="form-row">
@@ -634,358 +660,611 @@
         </div>
         <div class="form-group"><label>Email</label><input class="form-input" placeholder="tu@email.com" type="email"></div>
         <div class="form-group"><label>Contraseña</label><input class="form-input" placeholder="Mínimo 8 caracteres" type="password"></div>
-        <div class="form-group"><label>Repetir contraseña</label><input class="form-input" placeholder="••••••••" type="password"></div>
         <button class="btn-full" onclick="doRegister()">Crear cuenta →</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== ACCOUNT PAGE ===== -->
+<!-- ===== ACCOUNT ===== -->
 <div class="page" id="page-account">
   <div class="account-layout">
     <div class="account-nav">
       <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;margin-bottom:8px;border-bottom:1px solid var(--border)">
         <div style="width:40px;height:40px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Fraunces',serif">JG</div>
-        <div><div style="font-size:14px;font-weight:500">Juan García</div><div style="font-size:11px;color:var(--gray)">Cliente Premium</div></div>
+        <div><div style="font-size:14px;font-weight:500">Juan García</div><div style="font-size:11px;color:var(--gray)">Cliente</div></div>
       </div>
       <div class="account-nav-item active" onclick="showAccountTab('orders',this)"><span>📦</span> Mis pedidos</div>
       <div class="account-nav-item" onclick="showAccountTab('profile',this)"><span>👤</span> Mi perfil</div>
       <div class="account-nav-item" onclick="showAccountTab('addresses',this)"><span>📍</span> Direcciones</div>
       <div class="account-nav-item" onclick="showAccountTab('favorites',this)"><span>❤️</span> Favoritos</div>
-      <div class="account-nav-item" onclick="showAccountTab('payment',this)"><span>💳</span> Métodos de pago</div>
       <div class="account-nav-item" style="margin-top:8px;border-top:1px solid var(--border);padding-top:12px;color:#dc2626" onclick="logout()"><span>🚪</span> Cerrar sesión</div>
     </div>
     <div id="accountContent">
       <div id="tab-orders">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-          <h2 style="font-size:22px;font-weight:700;font-family:'Fraunces',serif">Mis pedidos</h2>
-        </div>
-        <div class="order-row"><div><div style="font-weight:500;margin-bottom:2px">#LA-00089 · 3 productos</div><div style="font-size:12px;color:var(--gray)">2 pizzas muzzarella + 12 empanadas carne</div><div style="font-size:12px;color:var(--gray);margin-top:4px">14 ene 2024</div></div><div style="text-align:right"><div class="order-status status-delivered">Entregado</div><div style="font-weight:600;margin-top:4px;font-size:14px">$4.850</div></div></div>
-        <div class="order-row"><div><div style="font-weight:500;margin-bottom:2px">#LA-00078 · 2 productos</div><div style="font-size:12px;color:var(--gray)">1 tarta jamón y queso + 6 empanadas pollo</div><div style="font-size:12px;color:var(--gray);margin-top:4px">8 ene 2024</div></div><div style="text-align:right"><div class="order-status status-processing">En camino</div><div style="font-weight:600;margin-top:4px;font-size:14px">$3.200</div></div></div>
-        <div class="order-row"><div><div style="font-weight:500;margin-bottom:2px">#LA-00061 · 5 productos</div><div style="font-size:12px;color:var(--gray)">Pedido de catering · 40 personas</div><div style="font-size:12px;color:var(--gray);margin-top:4px">22 dic 2023</div></div><div style="text-align:right"><div class="order-status status-delivered">Entregado</div><div style="font-weight:600;margin-top:4px;font-size:14px">$18.500</div></div></div>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:20px">Mis pedidos</h2>
+        <div class="order-row"><div><div style="font-weight:500">#EDS-00089 · 3 productos</div><div style="font-size:12px;color:var(--gray)">2 pizzas + 12 empanadas · 14 ene 2024</div></div><div style="text-align:right"><div class="order-status status-delivered">Entregado</div><div style="font-weight:600;font-size:14px;margin-top:4px">$4.850</div></div></div>
+        <div class="order-row"><div><div style="font-weight:500">#EDS-00078 · 2 productos</div><div style="font-size:12px;color:var(--gray)">1 tarta + 6 empanadas · 8 ene 2024</div></div><div style="text-align:right"><div class="order-status status-processing">En camino</div><div style="font-weight:600;font-size:14px;margin-top:4px">$3.200</div></div></div>
       </div>
       <div id="tab-profile" style="display:none">
-        <h2 style="font-size:22px;font-weight:700;font-family:'Fraunces',serif;margin-bottom:20px">Mi perfil</h2>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:20px">Mi perfil</h2>
         <div class="section-card">
           <div class="form-row"><div class="form-group"><label>Nombre</label><input class="form-input" value="Juan"></div><div class="form-group"><label>Apellido</label><input class="form-input" value="García"></div></div>
           <div class="form-group"><label>Email</label><input class="form-input" value="juan@email.com" type="email"></div>
           <div class="form-group"><label>Teléfono</label><input class="form-input" value="+54 11 5555-0000"></div>
-          <button class="btn-full" style="max-width:200px" onclick="showToast('✓ Perfil actualizado')">Guardar cambios</button>
+          <button class="btn-full" style="max-width:200px" onclick="showToast('✓ Perfil actualizado')">Guardar</button>
         </div>
       </div>
       <div id="tab-addresses" style="display:none">
-        <h2 style="font-size:22px;font-weight:700;font-family:'Fraunces',serif;margin-bottom:20px">Mis direcciones</h2>
-        <div class="section-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div style="font-weight:500;margin-bottom:4px">Casa 🏠</div><div style="font-size:13px;color:var(--gray)">Av. Corrientes 1234, 3°B<br>CABA, Argentina</div></div><button class="edit-btn">Editar</button></div></div>
-        <button class="btn-nav" style="margin-top:8px" onclick="showToast('Función disponible próximamente')">+ Agregar dirección</button>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:20px">Mis direcciones</h2>
+        <div class="section-card"><div style="display:flex;justify-content:space-between"><div><div style="font-weight:500;margin-bottom:4px">Casa 🏠</div><div style="font-size:13px;color:var(--gray)">Av. Corrientes 1234, 3°B · CABA</div></div><button class="edit-btn">Editar</button></div></div>
       </div>
       <div id="tab-favorites" style="display:none">
-        <h2 style="font-size:22px;font-weight:700;font-family:'Fraunces',serif;margin-bottom:20px">Favoritos</h2>
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:20px">Favoritos</h2>
         <div class="products-grid" id="favoritesGrid"></div>
-      </div>
-      <div id="tab-payment" style="display:none">
-        <h2 style="font-size:22px;font-weight:700;font-family:'Fraunces',serif;margin-bottom:20px">Métodos de pago</h2>
-        <div class="section-card"><div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:24px">💳</span><div><div style="font-weight:500">Visa terminada en 4242</div><div style="font-size:12px;color:var(--gray)">Vence 12/26</div></div></div><button class="edit-btn">Eliminar</button></div></div>
-        <button class="btn-nav" style="margin-top:8px" onclick="showToast('Función disponible próximamente')">+ Agregar tarjeta</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== ADMIN PAGE ===== -->
-<div class="page" id="page-admin">
-  <div class="admin-layout">
-    <div class="admin-header">
-      <div style="font-family:'Fraunces',serif;font-size:18px">La Masa <span style="opacity:0.4">/ Admin</span></div>
-      <div class="admin-nav">
-        <div class="admin-nav-item active" onclick="showAdminTab('dashboard',this)">Dashboard</div>
-        <div class="admin-nav-item" onclick="showAdminTab('products',this)">Productos</div>
-        <div class="admin-nav-item" onclick="showAdminTab('orders',this)">Pedidos</div>
-        <div class="admin-nav-item" onclick="showAdminTab('customers',this)">Clientes</div>
-        <div class="admin-nav-item" onclick="showAdminTab('coupons',this)">Cupones</div>
-      </div>
-      <button class="btn-nav" style="color:#fff;border-color:rgba(255,255,255,0.3)" onclick="showPage('home')">← Volver al sitio</button>
+<!-- ===== ADMIN LOGIN ===== -->
+<div class="page" id="page-adminlogin">
+  <div class="admin-login">
+    <div class="lock-icon">🔐</div>
+    <h2>Panel de administración</h2>
+    <p>Acceso exclusivo para el administrador del sitio</p>
+    <div class="auth-card" style="text-align:left">
+      <div class="form-group"><label>Usuario admin</label><input class="form-input" placeholder="admin@eldessiempre.com" id="adminUser" type="email"></div>
+      <div class="form-group"><label>Contraseña</label><input class="form-input" placeholder="••••••••" type="password" id="adminPass"></div>
+      <button class="btn-full" onclick="doAdminLogin()">Acceder al panel →</button>
+      <p style="font-size:11px;color:var(--gray);text-align:center;margin-top:12px">Demo: cualquier email + contraseña "admin123"</p>
     </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div class="page" id="page-admin">
+  <div class="admin-topbar">
+    <div class="admin-topbar-title">El de Siempre <span style="opacity:0.4">/ Admin</span></div>
+    <div class="admin-nav">
+      <div class="admin-nav-item active" onclick="showAdminTab('dashboard',this)">Dashboard</div>
+      <div class="admin-nav-item" onclick="showAdminTab('products',this)">Productos</div>
+      <div class="admin-nav-item" onclick="showAdminTab('orders',this)">Pedidos</div>
+      <div class="admin-nav-item" onclick="showAdminTab('customers',this)">Clientes</div>
+      <div class="admin-nav-item" onclick="showAdminTab('catering',this)">Catering</div>
+    </div>
+    <button class="btn-nav" style="color:#fff;border-color:rgba(255,255,255,0.3);font-size:12px" onclick="showPage('home')">← Volver al sitio</button>
+  </div>
+
+  <div class="admin-wrap">
+
+    <!-- DASHBOARD -->
     <div id="adminDashboard">
       <div class="stats-grid">
         <div class="stat-card"><div class="stat-label">Ventas del mes</div><div class="stat-num">$284.500</div><div class="stat-change">↑ 18% vs mes anterior</div></div>
         <div class="stat-card"><div class="stat-label">Pedidos totales</div><div class="stat-num">142</div><div class="stat-change">↑ 12% vs mes anterior</div></div>
-        <div class="stat-card"><div class="stat-label">Clientes nuevos</div><div class="stat-num">38</div><div class="stat-change">↑ 24% vs mes anterior</div></div>
+        <div class="stat-card"><div class="stat-label">Clientes registrados</div><div class="stat-num">318</div><div class="stat-change">↑ 24% este mes</div></div>
         <div class="stat-card"><div class="stat-label">Ticket promedio</div><div class="stat-num">$2.003</div><div class="stat-change">↑ 5% vs mes anterior</div></div>
       </div>
-      <div style="font-size:16px;font-weight:600;margin-bottom:12px">Últimos pedidos</div>
+
+      <!-- VENTAS CHART -->
+      <div class="chart-bar-wrap">
+        <div class="admin-section-title">Ventas semanales — enero 2024</div>
+        <div class="chart-bars" id="weeklyChart"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+        <!-- MONTHLY CHART -->
+        <div class="chart-bar-wrap" style="margin-bottom:0">
+          <div class="admin-section-title" style="font-size:14px">Ventas mensuales</div>
+          <div class="chart-bars" id="monthlyChart" style="height:80px"></div>
+        </div>
+        <!-- QUICK STATS -->
+        <div class="chart-bar-wrap" style="margin-bottom:0">
+          <div class="admin-section-title" style="font-size:14px">Resumen rápido</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+            <div style="background:var(--cream);border-radius:var(--rs);padding:12px;text-align:center"><div style="font-size:11px;color:var(--gray);margin-bottom:4px">Consultas catering</div><div style="font-size:20px;font-weight:700">12</div></div>
+            <div style="background:var(--cream);border-radius:var(--rs);padding:12px;text-align:center"><div style="font-size:11px;color:var(--gray);margin-bottom:4px">Pedidos hoy</div><div style="font-size:20px;font-weight:700">8</div></div>
+            <div style="background:var(--cream);border-radius:var(--rs);padding:12px;text-align:center"><div style="font-size:11px;color:var(--gray);margin-bottom:4px">En tránsito</div><div style="font-size:20px;font-weight:700">3</div></div>
+            <div style="background:var(--cream);border-radius:var(--rs);padding:12px;text-align:center"><div style="font-size:11px;color:var(--gray);margin-bottom:4px">Nuevos hoy</div><div style="font-size:20px;font-weight:700">5</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section-title">Últimos pedidos</div>
       <table class="admin-table">
         <thead><tr><th>#Pedido</th><th>Cliente</th><th>Productos</th><th>Total</th><th>Estado</th><th>Acción</th></tr></thead>
         <tbody>
-          <tr><td>#LA-00142</td><td>Ana Martínez</td><td>2 pizzas + 12 empanadas</td><td>$5.200</td><td><span class="order-status status-processing">En camino</span></td><td><button class="edit-btn">Gestionar</button></td></tr>
-          <tr><td>#LA-00141</td><td>Carlos Soto</td><td>1 tarta + 6 empanadas</td><td>$3.400</td><td><span class="order-status status-delivered">Entregado</span></td><td><button class="edit-btn">Ver</button></td></tr>
-          <tr><td>#LA-00140</td><td>Laura Fernández</td><td>Catering 30 personas</td><td>$14.800</td><td><span class="order-status status-pending">Pendiente</span></td><td><button class="edit-btn">Confirmar</button></td></tr>
-          <tr><td>#LA-00139</td><td>Martín López</td><td>3 pizzas mixtas</td><td>$4.100</td><td><span class="order-status status-delivered">Entregado</span></td><td><button class="edit-btn">Ver</button></td></tr>
+          <tr><td>#EDS-00142</td><td>Ana Martínez</td><td>2 pizzas + 12 empanadas</td><td>$5.200</td><td><span class="order-status status-processing">En camino</span></td><td><button class="edit-btn" onclick="showToast('Estado actualizado')">Gestionar</button></td></tr>
+          <tr><td>#EDS-00141</td><td>Carlos Soto</td><td>1 tarta + 6 empanadas</td><td>$3.400</td><td><span class="order-status status-delivered">Entregado</span></td><td><button class="edit-btn">Ver</button></td></tr>
+          <tr><td>#EDS-00140</td><td>Laura Fernández</td><td>Catering 30 personas</td><td>$14.800</td><td><span class="order-status status-pending">Pendiente</span></td><td><button class="edit-btn" onclick="showToast('Pedido confirmado ✓')">Confirmar</button></td></tr>
+          <tr><td>#EDS-00139</td><td>Martín López</td><td>3 pizzas mixtas</td><td>$4.100</td><td><span class="order-status status-delivered">Entregado</span></td><td><button class="edit-btn">Ver</button></td></tr>
         </tbody>
       </table>
     </div>
+
+    <!-- PRODUCTS -->
     <div id="adminProducts" style="display:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-        <div style="font-size:18px;font-weight:600">Gestión de productos</div>
-        <button class="checkout-btn" style="max-width:180px;padding:10px 20px;font-size:13px" onclick="showToast('📝 Formulario de nuevo producto')">+ Nuevo producto</button>
+      <div class="admin-section-title">
+        Gestión de productos
+        <button class="checkout-btn" style="max-width:180px;padding:10px 20px;font-size:13px" onclick="showToast('📝 Abrí el formulario de nuevo producto')">+ Nuevo producto</button>
       </div>
-      <table class="admin-table" id="adminProductsTable"></table>
+      <p style="font-size:13px;color:var(--gray);margin-bottom:16px">Editá nombre, precio y foto de cada producto directamente desde acá.</p>
+      <div id="productEditList"></div>
     </div>
+
+    <!-- ORDERS -->
     <div id="adminOrders" style="display:none">
-      <div style="font-size:18px;font-weight:600;margin-bottom:16px">Todos los pedidos</div>
+      <div class="admin-section-title">Todos los pedidos</div>
       <table class="admin-table">
-        <thead><tr><th>#Pedido</th><th>Fecha</th><th>Cliente</th><th>Total</th><th>Estado</th><th>Acción</th></tr></thead>
+        <thead><tr><th>#Pedido</th><th>Fecha</th><th>Cliente</th><th>Total</th><th>Estado</th><th>Cambiar estado</th></tr></thead>
         <tbody>
-          <tr><td>#LA-00142</td><td>14 ene</td><td>Ana Martínez</td><td>$5.200</td><td><span class="order-status status-processing">En camino</span></td><td><button class="edit-btn">Cambiar estado</button></td></tr>
-          <tr><td>#LA-00141</td><td>13 ene</td><td>Carlos Soto</td><td>$3.400</td><td><span class="order-status status-delivered">Entregado</span></td><td><button class="edit-btn">Ver</button></td></tr>
-          <tr><td>#LA-00140</td><td>12 ene</td><td>Laura Fernández</td><td>$14.800</td><td><span class="order-status status-pending">Pendiente</span></td><td><button class="edit-btn">Confirmar</button></td></tr>
+          <tr><td>#EDS-00142</td><td>14 ene</td><td>Ana Martínez</td><td>$5.200</td><td><span class="order-status status-processing">En camino</span></td><td><select onchange="showToast('✓ Estado actualizado')" style="font-size:12px;border:1px solid var(--border);border-radius:var(--rs);padding:4px 8px"><option>En camino</option><option>Entregado</option><option>Pendiente</option><option>Cancelado</option></select></td></tr>
+          <tr><td>#EDS-00141</td><td>13 ene</td><td>Carlos Soto</td><td>$3.400</td><td><span class="order-status status-delivered">Entregado</span></td><td><select onchange="showToast('✓ Estado actualizado')" style="font-size:12px;border:1px solid var(--border);border-radius:var(--rs);padding:4px 8px"><option>Entregado</option><option>En camino</option><option>Pendiente</option></select></td></tr>
+          <tr><td>#EDS-00140</td><td>12 ene</td><td>Laura Fernández</td><td>$14.800</td><td><span class="order-status status-pending">Pendiente</span></td><td><select onchange="showToast('✓ Estado actualizado')" style="font-size:12px;border:1px solid var(--border);border-radius:var(--rs);padding:4px 8px"><option>Pendiente</option><option>En camino</option><option>Entregado</option></select></td></tr>
+          <tr><td>#EDS-00139</td><td>12 ene</td><td>Martín López</td><td>$4.100</td><td><span class="order-status status-delivered">Entregado</span></td><td><select onchange="showToast('✓ Estado actualizado')" style="font-size:12px;border:1px solid var(--border);border-radius:var(--rs);padding:4px 8px"><option>Entregado</option><option>En camino</option></select></td></tr>
         </tbody>
       </table>
     </div>
+
+    <!-- CUSTOMERS -->
     <div id="adminCustomers" style="display:none">
-      <div style="font-size:18px;font-weight:600;margin-bottom:16px">Clientes</div>
-      <table class="admin-table">
-        <thead><tr><th>Cliente</th><th>Email</th><th>Pedidos</th><th>Total gastado</th><th>Último pedido</th></tr></thead>
-        <tbody>
-          <tr><td>María González</td><td>maria@gmail.com</td><td>8</td><td>$22.400</td><td>10 ene 2024</td></tr>
-          <tr><td>Juan Pérez</td><td>juan@gmail.com</td><td>5</td><td>$14.200</td><td>12 ene 2024</td></tr>
-          <tr><td>Carolina López</td><td>caro@gmail.com</td><td>12</td><td>$38.600</td><td>14 ene 2024</td></tr>
-          <tr><td>Roberto Silva</td><td>rob@gmail.com</td><td>3</td><td>$8.900</td><td>5 ene 2024</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="adminCoupons" style="display:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-        <div style="font-size:18px;font-weight:600">Cupones de descuento</div>
-        <button class="checkout-btn" style="max-width:160px;padding:10px 20px;font-size:13px" onclick="showToast('📝 Nuevo cupón creado')">+ Nuevo cupón</button>
+      <div class="admin-section-title">Clientes registrados</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+        <div class="stat-card"><div class="stat-label">Total clientes</div><div class="stat-num">318</div></div>
+        <div class="stat-card"><div class="stat-label">Nuevos este mes</div><div class="stat-num">38</div><div class="stat-change">↑ 24%</div></div>
+        <div class="stat-card"><div class="stat-label">Clientes recurrentes</div><div class="stat-num">187</div><div class="stat-change">59% del total</div></div>
       </div>
       <table class="admin-table">
-        <thead><tr><th>Código</th><th>Descuento</th><th>Usos</th><th>Vencimiento</th><th>Estado</th></tr></thead>
+        <thead><tr><th>Cliente</th><th>Email</th><th>Teléfono</th><th>Pedidos</th><th>Total gastado</th><th>Último pedido</th></tr></thead>
         <tbody>
-          <tr><td><code>BIENVENIDO</code></td><td>15%</td><td>24/100</td><td>28 feb 2024</td><td><span class="order-status status-delivered">Activo</span></td></tr>
-          <tr><td><code>MASA20</code></td><td>20%</td><td>8/50</td><td>31 ene 2024</td><td><span class="order-status status-delivered">Activo</span></td></tr>
-          <tr><td><code>ENVIOGRATIS</code></td><td>Envío gratis</td><td>50/50</td><td>01 ene 2024</td><td><span class="order-status status-pending">Expirado</span></td></tr>
+          <tr><td><b>María González</b></td><td>maria@gmail.com</td><td>+54 11 5555-0001</td><td>8</td><td>$22.400</td><td>10 ene 2024</td></tr>
+          <tr><td><b>Juan Pérez</b></td><td>juan@gmail.com</td><td>+54 11 5555-0002</td><td>5</td><td>$14.200</td><td>12 ene 2024</td></tr>
+          <tr><td><b>Carolina López</b></td><td>caro@gmail.com</td><td>+54 11 5555-0003</td><td>12</td><td>$38.600</td><td>14 ene 2024</td></tr>
+          <tr><td><b>Roberto Silva</b></td><td>rob@gmail.com</td><td>+54 11 5555-0004</td><td>3</td><td>$8.900</td><td>5 ene 2024</td></tr>
+          <tr><td><b>Valentina Torres</b></td><td>vale@gmail.com</td><td>+54 11 5555-0005</td><td>6</td><td>$17.300</td><td>13 ene 2024</td></tr>
         </tbody>
       </table>
     </div>
+
+    <!-- CATERING LEADS -->
+    <div id="adminCatering" style="display:none">
+      <div class="admin-section-title">Consultas de catering recibidas</div>
+      <div class="stat-card" style="max-width:200px;margin-bottom:20px"><div class="stat-label">Total consultas</div><div class="stat-num" id="cateringLeadCount">0</div><div class="stat-change">Este mes</div></div>
+      <table class="admin-table" id="cateringLeadsTable">
+        <thead><tr><th>Nombre</th><th>Teléfono</th><th>Zona</th><th>Personas</th><th>Tipo</th><th>Estado</th></tr></thead>
+        <tbody id="cateringLeadsBody">
+          <tr><td><b>Laura Fernández</b></td><td>+54 11 4444-1234</td><td>Palermo, CABA</td><td>40</td><td><span class="tag-catering">Pizza party</span></td><td><span class="order-status status-processing">En contacto</span></td></tr>
+          <tr><td><b>Sebastián Ruiz</b></td><td>+54 11 4444-5678</td><td>Belgrano, CABA</td><td>80</td><td><span class="tag-catering">Menú a medida</span></td><td><span class="order-status status-pending">Sin contactar</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </div>
 
 <script>
-const products=[
-  {id:1,name:'Pizza Muzzarella',desc:'Masa madre, muzzarella premium, tomate San Marzano',price:1800,cat:'Pizzas',emoji:'🍕',badge:'Más vendida'},
-  {id:2,name:'Pizza Napolitana',desc:'Tomate, muzzarella, albahaca fresca, aceite de oliva',price:1950,cat:'Pizzas',emoji:'🍕'},
-  {id:3,name:'Pizza Fugazzeta',desc:'Cebollas caramelizadas, muzzarella, aceitunas negras',price:2100,cat:'Pizzas',emoji:'🍕',badge:'Nuevo'},
-  {id:4,name:'Pizza 4 Quesos',desc:'Muzzarella, parmesano, provolone, brie',price:2400,cat:'Pizzas',emoji:'🍕'},
-  {id:5,name:'Empanadas Carne (x12)',desc:'Carne cortada a cuchillo, huevo, aceituna, pasa',price:2800,cat:'Empanadas',emoji:'🥟',badge:'Más vendida'},
-  {id:6,name:'Empanadas Pollo (x12)',desc:'Pollo desmenuzado, morrones, especias de la abuela',price:2600,cat:'Empanadas',emoji:'🥟'},
-  {id:7,name:'Empanadas Jamón y Queso (x12)',desc:'Jamón cocido, muzzarella, bechamel casera',price:2400,cat:'Empanadas',emoji:'🥟'},
-  {id:8,name:'Empanadas Caprese (x12)',desc:'Tomate, albahaca, muzzarella fresca, aceite',price:2500,cat:'Empanadas',emoji:'🥟',badge:'Nuevo'},
-  {id:9,name:'Tarta Jamón y Queso',desc:'Masa casera, relleno generoso, tapa opcional',price:1600,cat:'Tartas',emoji:'🥧'},
-  {id:10,name:'Tarta Verdura',desc:'Espinaca, zapallito, ricota y especias',price:1500,cat:'Tartas',emoji:'🥧',badge:'Vegano'},
-  {id:11,name:'Milanesas de Ternera (x6)',desc:'Peceto empanado a mano, tuco opcional incluido',price:3200,cat:'Carnes',emoji:'🥩'},
-  {id:12,name:'Croquetas de Carne (x12)',desc:'Carne, papa, queso, rebozadas artesanalmente',price:2200,cat:'Congelados',emoji:'❄️'},
+// ===================== DATA =====================
+const ADMIN_PASS = 'admin123';
+
+const products = [
+  {id:1,name:'Pizza Muzzarella',desc:'Masa madre, muzzarella premium, tomate San Marzano',price:1800,cat:'Pizzas',emoji:'🍕',badge:'Más vendida',img:''},
+  {id:2,name:'Pizza Napolitana',desc:'Tomate, muzzarella, albahaca fresca, aceite de oliva',price:1950,cat:'Pizzas',emoji:'🍕',img:''},
+  {id:3,name:'Pizza Fugazzeta',desc:'Cebollas caramelizadas, muzzarella, aceitunas negras',price:2100,cat:'Pizzas',emoji:'🍕',badge:'Nuevo',img:''},
+  {id:4,name:'Pizza 4 Quesos',desc:'Muzzarella, parmesano, provolone, brie',price:2400,cat:'Pizzas',emoji:'🍕',img:''},
+  {id:5,name:'Empanadas Carne (x12)',desc:'Carne cortada a cuchillo, huevo, aceituna, pasa',price:2800,cat:'Empanadas',emoji:'🥟',badge:'Más vendida',img:''},
+  {id:6,name:'Empanadas Pollo (x12)',desc:'Pollo desmenuzado, morrones, especias de la abuela',price:2600,cat:'Empanadas',emoji:'🥟',img:''},
+  {id:7,name:'Empanadas Jamón y Queso (x12)',desc:'Jamón cocido, muzzarella, bechamel casera',price:2400,cat:'Empanadas',emoji:'🥟',img:''},
+  {id:8,name:'Tarta Jamón y Queso',desc:'Masa casera, relleno generoso, tapa opcional',price:1600,cat:'Tartas',emoji:'🥧',img:''},
+  {id:9,name:'Tarta Verdura',desc:'Espinaca, zapallito, ricota y especias',price:1500,cat:'Tartas',emoji:'🥧',badge:'Vegano',img:''},
+  {id:10,name:'Milanesas de Ternera (x6)',desc:'Peceto empanado a mano, tuco opcional incluido',price:3200,cat:'Carnes',emoji:'🥩',img:''},
+  {id:11,name:'Croquetas de Carne (x12)',desc:'Carne, papa, queso, rebozadas artesanalmente',price:2200,cat:'Congelados',emoji:'❄️',img:''},
+  {id:12,name:'Arrollados de Verdura (x6)',desc:'Espinaca y queso envueltos en masa crujiente',price:1800,cat:'Congelados',emoji:'❄️',img:''},
 ];
-const cats=[{name:'Pizzas',emoji:'🍕'},{name:'Empanadas',emoji:'🥟'},{name:'Tartas',emoji:'🥧'},{name:'Carnes',emoji:'🥩'},{name:'Congelados',emoji:'❄️'},{name:'Catering',emoji:'🎉'}];
-let cart=[];
-let currentFilter='Todos';
-let modalProduct=null;
-let modalQtyVal=1;
 
-function init(){
-  renderHomeCats();renderFeaturedProducts();renderShopCats();renderShopProducts(products);renderAdminProducts();
+const cats = [{name:'Pizzas',emoji:'🍕'},{name:'Empanadas',emoji:'🥟'},{name:'Tartas',emoji:'🥧'},{name:'Carnes',emoji:'🥩'},{name:'Congelados',emoji:'❄️'},{name:'Catering',emoji:'🎉'}];
+let cart = [];
+let currentFilter = 'Todos';
+let modalProduct = null;
+let modalQtyVal = 1;
+let cateringLeads = [];
+
+// ===================== INIT =====================
+function init() {
+  renderHomeCats();
+  renderFeaturedProducts();
+  renderShopCats();
+  renderShopProducts(products);
+  renderProductEditList();
+  renderWeeklyChart();
+  renderMonthlyChart();
 }
 
-function renderHomeCats(){
-  document.getElementById('homeCats').innerHTML=cats.map(c=>`<div class="cat-card" onclick="filterAndShow('${c.name}')"><div class="cat-emoji">${c.emoji}</div><div class="cat-name">${c.name}</div><div class="cat-count">${c.name==='Catering'?'Consultar':products.filter(p=>p.cat===c.name).length+' productos'}</div></div>`).join('');
+// ===================== RENDER =====================
+function renderHomeCats() {
+  document.getElementById('homeCats').innerHTML = cats.map(c =>
+    `<div class="cat-card" onclick="${c.name==='Catering'?"showPage('catering')":`filterAndShow('${c.name}')`}">
+      <div class="cat-emoji">${c.emoji}</div>
+      <div class="cat-name">${c.name}</div>
+      <div class="cat-count">${c.name==='Catering'?'Consultar':products.filter(p=>p.cat===c.name).length+' productos'}</div>
+    </div>`
+  ).join('');
 }
 
-function renderFeaturedProducts(){
-  document.getElementById('featuredProducts').innerHTML=products.filter(p=>p.badge).slice(0,4).map(productCard).join('');
+function renderFeaturedProducts() {
+  document.getElementById('featuredProducts').innerHTML =
+    products.filter(p=>p.badge).slice(0,4).map(productCard).join('');
 }
 
-function renderShopCats(){
-  const allCats=[{name:'Todos',emoji:'🛒'},...cats];
-  document.getElementById('shopCats').innerHTML=allCats.map(c=>`<div class="cat-card${c.name===currentFilter?' active':''}" onclick="setFilter('${c.name}',this)"><div class="cat-emoji">${c.emoji}</div><div class="cat-name">${c.name}</div><div class="cat-count">${c.name==='Todos'?products.length+' productos':c.name==='Catering'?'Consultar':products.filter(p=>p.cat===c.name).length}</div></div>`).join('');
+function renderShopCats() {
+  const all = [{name:'Todos',emoji:'🛒'}, ...cats];
+  document.getElementById('shopCats').innerHTML = all.map(c =>
+    `<div class="cat-card${c.name===currentFilter?' active':''}" onclick="setFilter('${c.name}',this)">
+      <div class="cat-emoji">${c.emoji}</div>
+      <div class="cat-name">${c.name}</div>
+      <div class="cat-count">${c.name==='Todos'?products.length:c.name==='Catering'?'Consultar':products.filter(p=>p.cat===c.name).length}</div>
+    </div>`
+  ).join('');
 }
 
-function productCard(p){
-  return`<div class="product-card" onclick="openModal(${p.id})"><div class="product-img">${p.emoji}</div><div class="product-info">${p.badge?`<div class="badge-new">${p.badge}</div>`:''}<div class="product-name">${p.name}</div><div class="product-desc">${p.desc}</div><div class="product-footer"><div class="product-price">$${p.price.toLocaleString('es-AR')}</div><button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})">+</button></div></div></div>`;
+function productCard(p) {
+  const imgHtml = p.img
+    ? `<img src="${p.img}" alt="${p.name}"><div class="emoji-fallback" style="display:none">${p.emoji}</div>`
+    : `<div class="emoji-fallback">${p.emoji}</div>`;
+  return `<div class="product-card" onclick="openModal(${p.id})">
+    <div class="product-img">${imgHtml}</div>
+    <div class="product-info">
+      ${p.badge?`<div class="badge-new">${p.badge}</div>`:''}
+      <div class="product-name">${p.name}</div>
+      <div class="product-desc">${p.desc}</div>
+      <div class="product-footer">
+        <div class="product-price">$${p.price.toLocaleString('es-AR')}</div>
+        <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})">+</button>
+      </div>
+    </div>
+  </div>`;
 }
 
-function renderShopProducts(list){
-  const el=document.getElementById('shopProducts');
-  if(!list.length){el.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--gray)"><div style="font-size:48px;margin-bottom:8px">🔍</div><p>No encontramos productos</p></div>';return;}
-  el.innerHTML=list.map(productCard).join('');
-  document.getElementById('productCount').textContent=list.length+' producto'+(list.length!==1?'s':'');
+function renderShopProducts(list) {
+  const el = document.getElementById('shopProducts');
+  if (!list.length) {
+    el.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--gray)"><div style="font-size:48px;margin-bottom:8px">🔍</div><p>No encontramos productos</p></div>';
+    return;
+  }
+  el.innerHTML = list.map(productCard).join('');
+  document.getElementById('productCount').textContent = list.length + ' producto' + (list.length!==1?'s':'');
 }
 
-function filterProducts(q){
-  const query=q.toLowerCase().trim();
-  let list=currentFilter==='Todos'?products:products.filter(p=>p.cat===currentFilter);
-  if(query)list=list.filter(p=>p.name.toLowerCase().includes(query)||p.desc.toLowerCase().includes(query));
+function renderProductEditList() {
+  const el = document.getElementById('productEditList');
+  if (!el) return;
+  el.innerHTML = products.map(p => `
+    <div class="product-edit-card">
+      <div class="product-edit-img" id="editImg${p.id}">
+        ${p.img?`<img src="${p.img}" alt="${p.name}">`:`<span>${p.emoji}</span>`}
+      </div>
+      <div class="product-edit-info">
+        <div class="product-edit-name">${p.name}</div>
+        <div class="product-edit-cat">${p.cat}</div>
+      </div>
+      <div class="product-edit-actions">
+        <input class="price-input" value="${p.price}" id="price${p.id}" onchange="updatePrice(${p.id},this.value)">
+        <label class="edit-btn" style="cursor:pointer">
+          📷 Foto
+          <input type="file" accept="image/*" style="display:none" onchange="updatePhoto(${p.id},this)">
+        </label>
+        <button class="edit-btn" onclick="showToast('✓ ${p.name} actualizado')">Guardar</button>
+      </div>
+    </div>`
+  ).join('');
+}
+
+function updatePrice(id, val) {
+  const p = products.find(x=>x.id===id);
+  if (p) { p.price = parseInt(val) || p.price; showToast('💰 Precio actualizado'); }
+}
+
+function updatePhoto(id, input) {
+  if (!input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const p = products.find(x=>x.id===id);
+    if (p) {
+      p.img = e.target.result;
+      const imgEl = document.getElementById('editImg'+id);
+      if (imgEl) imgEl.innerHTML = `<img src="${e.target.result}" alt="${p.name}">`;
+      showToast('🖼️ Foto actualizada para '+p.name);
+    }
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+// ===================== CHARTS =====================
+function renderWeeklyChart() {
+  const data = [
+    {label:'Lun',val:18500},{label:'Mar',val:24200},{label:'Mié',val:21000},
+    {label:'Jue',val:31400},{label:'Vie',val:42800},{label:'Sáb',val:58600},{label:'Dom',val:38900}
+  ];
+  const max = Math.max(...data.map(d=>d.val));
+  document.getElementById('weeklyChart').innerHTML = data.map(d => `
+    <div class="chart-bar-col">
+      <div class="chart-val">$${Math.round(d.val/1000)}k</div>
+      <div class="chart-bar" style="height:${Math.round((d.val/max)*100)}%" title="$${d.val.toLocaleString('es-AR')}"></div>
+      <div class="chart-label">${d.label}</div>
+    </div>`
+  ).join('');
+}
+
+function renderMonthlyChart() {
+  const data = [
+    {label:'Ago',val:180000},{label:'Sep',val:210000},{label:'Oct',val:195000},
+    {label:'Nov',val:240000},{label:'Dic',val:310000},{label:'Ene',val:284500}
+  ];
+  const max = Math.max(...data.map(d=>d.val));
+  document.getElementById('monthlyChart').innerHTML = data.map(d => `
+    <div class="chart-bar-col">
+      <div class="chart-bar" style="height:${Math.round((d.val/max)*100)}%" title="$${d.val.toLocaleString('es-AR')}"></div>
+      <div class="chart-label">${d.label}</div>
+    </div>`
+  ).join('');
+}
+
+// ===================== FILTERS =====================
+function filterProducts(q) {
+  const query = q.toLowerCase().trim();
+  let list = currentFilter==='Todos' ? products : products.filter(p=>p.cat===currentFilter);
+  if (query) list = list.filter(p=>p.name.toLowerCase().includes(query)||p.desc.toLowerCase().includes(query));
   renderShopProducts(list);
 }
 
-function setFilter(cat,el){
-  currentFilter=cat;
+function setFilter(cat, el) {
+  currentFilter = cat;
   document.querySelectorAll('#shopCats .cat-card').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
-  document.getElementById('shopTitle').textContent=cat==='Todos'?'Todos los productos':cat;
-  filterProducts(document.getElementById('searchInput').value);
+  document.getElementById('shopTitle').textContent = cat==='Todos' ? 'Todos los productos' : cat;
+  filterProducts(document.getElementById('searchInput')?.value || '');
 }
 
-function filterAndShow(cat){
-  showPage('shop');currentFilter=cat;renderShopCats();
-  document.getElementById('shopTitle').textContent=cat;
+function filterAndShow(cat) {
+  showPage('shop');
+  currentFilter = cat;
+  renderShopCats();
+  document.getElementById('shopTitle').textContent = cat;
   filterProducts('');
 }
 
-function addToCart(id,qty=1){
-  const p=products.find(x=>x.id===id);
-  const ex=cart.find(x=>x.id===id);
-  if(ex)ex.qty+=qty; else cart.push({...p,qty});
-  updateCartUI();showToast(`✓ ${p.name} agregado`);
+// ===================== CART =====================
+function addToCart(id, qty=1) {
+  const p = products.find(x=>x.id===id);
+  const ex = cart.find(x=>x.id===id);
+  if (ex) ex.qty += qty; else cart.push({...p, qty});
+  updateCartUI();
+  showToast(`✓ ${p.name} agregado`);
 }
 
-function updateCartUI(){
-  document.getElementById('cartCount').textContent=cart.reduce((a,b)=>a+b.qty,0);
-  const el=document.getElementById('cartItems');
-  if(!cart.length){el.innerHTML='<div class="empty-cart"><div class="empty-cart-icon">🛒</div><p>Tu carrito está vacío</p></div>';
-  }else{
-    el.innerHTML=cart.map(item=>`<div class="cart-item"><div class="cart-item-img">${item.emoji}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">$${item.price.toLocaleString('es-AR')} c/u</div><div class="cart-qty"><button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${item.id},1)">+</button></div></div><button class="remove-btn" onclick="removeFromCart(${item.id})">×</button></div>`).join('');
+function updateCartUI() {
+  document.getElementById('cartCount').textContent = cart.reduce((a,b)=>a+b.qty, 0);
+  const el = document.getElementById('cartItems');
+  if (!cart.length) {
+    el.innerHTML = '<div class="empty-cart"><div style="font-size:48px;margin-bottom:12px">🛒</div><p style="font-size:14px">Tu carrito está vacío</p></div>';
+  } else {
+    el.innerHTML = cart.map(item => {
+      const imgHtml = item.img
+        ? `<img src="${item.img}" alt="${item.name}">`
+        : item.emoji;
+      return `<div class="cart-item">
+        <div class="cart-item-img">${imgHtml}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">$${item.price.toLocaleString('es-AR')} c/u</div>
+          <div class="cart-qty">
+            <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
+          </div>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${item.id})">×</button>
+      </div>`;
+    }).join('');
   }
-  const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
-  document.getElementById('cartSubtotal').textContent='$'+sub.toLocaleString('es-AR');
-  document.getElementById('cartTotal').textContent='$'+(sub+800).toLocaleString('es-AR');
+  const sub = cart.reduce((a,b)=>a+b.price*b.qty, 0);
+  document.getElementById('cartSubtotal').textContent = '$'+sub.toLocaleString('es-AR');
+  document.getElementById('cartTotal').textContent = '$'+(sub+800).toLocaleString('es-AR');
   updateOrderSummary();
 }
 
-function changeQty(id,delta){
-  const item=cart.find(x=>x.id===id);
-  if(!item)return;
-  item.qty+=delta;
-  if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+function changeQty(id, delta) {
+  const item = cart.find(x=>x.id===id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(x=>x.id!==id);
   updateCartUI();
 }
-function removeFromCart(id){cart=cart.filter(x=>x.id!==id);updateCartUI();}
+function removeFromCart(id) { cart = cart.filter(x=>x.id!==id); updateCartUI(); }
 
-function applyCoupon(){
-  const code=document.getElementById('couponInput').value.toUpperCase();
-  if(code==='MASA20'||code==='BIENVENIDO'){
-    const disc=code==='MASA20'?0.2:0.15;
-    const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
-    const discAmt=Math.round(sub*disc);
-    document.getElementById('discountRow').style.display='flex';
-    document.getElementById('discountAmt').textContent='-$'+discAmt.toLocaleString('es-AR');
-    document.getElementById('cartTotal').textContent='$'+(sub+800-discAmt).toLocaleString('es-AR');
-    showToast('🎉 Cupón aplicado: '+Math.round(disc*100)+'% off');
-  }else{showToast('❌ Cupón no válido');}
-}
-
-function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartSidebar').classList.add('open');}
-function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartSidebar').classList.remove('open');}
-
-function goCheckout(){
-  if(!cart.length){showToast('❌ Tu carrito está vacío');return;}
-  closeCart();showPage('checkout');updateOrderSummary();
-}
-
-function updateOrderSummary(){
-  const el=document.getElementById('orderSummaryItems');
-  if(!el)return;
-  el.innerHTML=cart.map(item=>`<div class="oi-row"><div class="oi-name"><div class="oi-emoji">${item.emoji}</div><span>${item.name} x${item.qty}</span></div><span>$${(item.price*item.qty).toLocaleString('es-AR')}</span></div>`).join('');
-  const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
-  if(document.getElementById('summarySubtotal'))document.getElementById('summarySubtotal').textContent='$'+sub.toLocaleString('es-AR');
-  if(document.getElementById('summaryTotal'))document.getElementById('summaryTotal').textContent='$'+(sub+800).toLocaleString('es-AR');
-}
-
-function ckNext(step){
-  if(step===2){
-    if(!document.getElementById('ckName').value){showToast('❌ Ingresá tu nombre');return;}
-    document.getElementById('ck2').className='ck-step done';
-    document.getElementById('ck3').className='ck-step active';
-    document.getElementById('ckStep2').style.display='none';
-    document.getElementById('ckStep3').style.display='block';
-  }else if(step===3){
-    document.getElementById('ck3').className='ck-step done';
-    document.getElementById('ck4').className='ck-step active';
-    document.getElementById('ckStep3').style.display='none';
-    document.getElementById('ckStep4').style.display='block';
+function applyCoupon() {
+  const code = document.getElementById('couponInput').value.toUpperCase();
+  const coupons = {'SIEMPRE20':0.2, 'BIENVENIDO':0.15};
+  if (coupons[code]) {
+    const sub = cart.reduce((a,b)=>a+b.price*b.qty, 0);
+    const disc = Math.round(sub * coupons[code]);
+    document.getElementById('discountRow').style.display = 'flex';
+    document.getElementById('discountAmt').textContent = '-$'+disc.toLocaleString('es-AR');
+    document.getElementById('cartTotal').textContent = '$'+(sub+800-disc).toLocaleString('es-AR');
+    showToast('🎉 Cupón aplicado: '+Math.round(coupons[code]*100)+'% off');
+  } else {
+    showToast('❌ Cupón no válido');
   }
 }
-function selectDelivery(el,type){
+
+function openCart() { document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartSidebar').classList.add('open'); }
+function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartSidebar').classList.remove('open'); }
+
+function goCheckout() {
+  if (!cart.length) { showToast('❌ Tu carrito está vacío'); return; }
+  closeCart(); showPage('checkout'); updateOrderSummary();
+}
+
+function updateOrderSummary() {
+  const el = document.getElementById('orderSummaryItems');
+  if (!el) return;
+  el.innerHTML = cart.map(item => {
+    const imgHtml = item.img ? `<img src="${item.img}" alt="">` : item.emoji;
+    return `<div class="oi-row">
+      <div class="oi-name"><div class="oi-emoji">${imgHtml}</div><span>${item.name} x${item.qty}</span></div>
+      <span>$${(item.price*item.qty).toLocaleString('es-AR')}</span>
+    </div>`;
+  }).join('');
+  const sub = cart.reduce((a,b)=>a+b.price*b.qty, 0);
+  if (document.getElementById('summarySubtotal')) document.getElementById('summarySubtotal').textContent = '$'+sub.toLocaleString('es-AR');
+  if (document.getElementById('summaryTotal')) document.getElementById('summaryTotal').textContent = '$'+(sub+800).toLocaleString('es-AR');
+}
+
+// ===================== CHECKOUT =====================
+function ckNext(step) {
+  if (step===2) {
+    if (!document.getElementById('ckName').value) { showToast('❌ Ingresá tu nombre'); return; }
+    document.getElementById('ck2').className = 'ck-step done';
+    document.getElementById('ck3').className = 'ck-step active';
+    document.getElementById('ckStep2').style.display = 'none';
+    document.getElementById('ckStep3').style.display = 'block';
+  } else if (step===3) {
+    document.getElementById('ck3').className = 'ck-step done';
+    document.getElementById('ck4').className = 'ck-step active';
+    document.getElementById('ckStep3').style.display = 'none';
+    document.getElementById('ckStep4').style.display = 'block';
+  }
+}
+function selectDelivery(el, type) {
   document.querySelectorAll('.delivery-opt').forEach(x=>x.classList.remove('selected'));
   el.classList.add('selected');
-  document.getElementById('addressCard').style.display=type==='envio'?'block':'none';
+  document.getElementById('addressCard').style.display = type==='envio' ? 'block' : 'none';
 }
-function selectPay(el){document.querySelectorAll('.pay-opt').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');}
-
-function confirmOrder(){
-  const num='#LA-'+String(Math.floor(Math.random()*89999)+10000);
-  document.getElementById('orderNum').textContent=num;
-  cart=[];updateCartUI();showPage('confirm');
+function selectPay(el) { document.querySelectorAll('.pay-opt').forEach(x=>x.classList.remove('selected')); el.classList.add('selected'); }
+function confirmOrder() {
+  const num = '#EDS-' + String(Math.floor(Math.random()*89999)+10000);
+  document.getElementById('orderNum').textContent = num;
+  cart = []; updateCartUI(); showPage('confirm');
 }
 
-function openModal(id){
-  const p=products.find(x=>x.id===id);
-  modalProduct=p;modalQtyVal=1;
-  document.getElementById('modalImg').textContent=p.emoji;
-  document.getElementById('modalTitle').textContent=p.name;
-  document.getElementById('modalDesc').textContent=p.desc;
-  document.getElementById('modalPrice').textContent='$'+p.price.toLocaleString('es-AR');
-  document.getElementById('modalQty').textContent=1;
-  document.getElementById('modalBadge').innerHTML=p.badge?`<div class="badge-new">${p.badge}</div>`:'';
-  document.getElementById('modalAddBtn').onclick=()=>{addToCart(p.id,modalQtyVal);closeModal();};
+// ===================== MODAL =====================
+function openModal(id) {
+  const p = products.find(x=>x.id===id);
+  modalProduct = p; modalQtyVal = 1;
+  const imgEl = document.getElementById('modalImg');
+  imgEl.innerHTML = p.img
+    ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover">`
+    : `<div class="emoji-big">${p.emoji}</div>`;
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalPrice').textContent = '$'+p.price.toLocaleString('es-AR');
+  document.getElementById('modalQty').textContent = 1;
+  document.getElementById('modalBadge').innerHTML = p.badge ? `<div class="badge-new">${p.badge}</div>` : '';
+  document.getElementById('modalAddBtn').onclick = () => { addToCart(p.id, modalQtyVal); closeModal(); };
   document.getElementById('productModal').classList.add('open');
 }
-function closeModal(){document.getElementById('productModal').classList.remove('open');}
-function changeModalQty(d){modalQtyVal=Math.max(1,modalQtyVal+d);document.getElementById('modalQty').textContent=modalQtyVal;}
+function closeModal() { document.getElementById('productModal').classList.remove('open'); }
+function changeModalQty(d) { modalQtyVal = Math.max(1, modalQtyVal+d); document.getElementById('modalQty').textContent = modalQtyVal; }
 
-function switchAuth(type,btn){
-  document.querySelectorAll('.auth-tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
-  document.getElementById('authLogin').style.display=type==='login'?'block':'none';
-  document.getElementById('authRegister').style.display=type==='register'?'block':'none';
+// ===================== CATERING FORM =====================
+function submitCatering() {
+  const name = document.getElementById('ctName').value.trim();
+  const phone = document.getElementById('ctPhone').value.trim();
+  const zone = document.getElementById('ctZone').value.trim();
+  const guests = document.getElementById('ctGuests').value.trim();
+  const type = document.getElementById('ctType').value;
+  const typeLabels = {pizza_party:'Pizza party', pizza_premium:'Pizza premium', asado:'Asado', menu_medida:'Menú a medida'};
+
+  if (!name || !phone || !zone || !guests || !type) { showToast('❌ Completá todos los campos'); return; }
+
+  cateringLeads.push({ name, phone, zone, guests, type: typeLabels[type] });
+
+  const tbody = document.getElementById('cateringLeadsBody');
+  if (tbody) {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td><b>${name}</b></td><td>${phone}</td><td>${zone}</td><td>${guests}</td><td><span class="tag-catering">${typeLabels[type]}</span></td><td><span class="order-status status-pending">Sin contactar</span></td>`;
+    tbody.insertBefore(row, tbody.firstChild);
+    const countEl = document.getElementById('cateringLeadCount');
+    if (countEl) countEl.textContent = parseInt(countEl.textContent||0) + 1;
+  }
+
+  document.getElementById('ctName').value = '';
+  document.getElementById('ctPhone').value = '';
+  document.getElementById('ctZone').value = '';
+  document.getElementById('ctGuests').value = '';
+  document.getElementById('ctType').value = '';
+
+  showToast('✓ Consulta enviada. Te contactamos pronto!');
+  setTimeout(() => showPage('home'), 2000);
 }
-function doLogin(){showToast('✓ Sesión iniciada');setTimeout(()=>showPage('account'),500);}
-function doRegister(){showToast('✓ Cuenta creada');setTimeout(()=>showPage('account'),500);}
-function logout(){showPage('home');showToast('Sesión cerrada');}
 
-function showAccountTab(tab,el){
+// ===================== AUTH =====================
+function switchAuth(type, btn) {
+  document.querySelectorAll('.auth-tab').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
+  document.getElementById('authLogin').style.display = type==='login' ? 'block' : 'none';
+  document.getElementById('authRegister').style.display = type==='register' ? 'block' : 'none';
+}
+function doLogin() { showToast('✓ Sesión iniciada'); setTimeout(()=>showPage('account'), 500); }
+function doRegister() { showToast('✓ Cuenta creada'); setTimeout(()=>showPage('account'), 500); }
+function logout() { showPage('home'); showToast('Sesión cerrada'); }
+
+// ===================== ADMIN AUTH =====================
+function doAdminLogin() {
+  const pass = document.getElementById('adminPass').value;
+  if (pass === ADMIN_PASS) {
+    showToast('✓ Bienvenido al panel admin');
+    setTimeout(() => showPage('admin'), 400);
+  } else {
+    showToast('❌ Contraseña incorrecta');
+  }
+}
+
+// ===================== ACCOUNT TABS =====================
+function showAccountTab(tab, el) {
   document.querySelectorAll('.account-nav-item').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('#accountContent>div').forEach(x=>x.style.display='none');
-  document.getElementById('tab-'+tab).style.display='block';
-  if(tab==='favorites')document.getElementById('favoritesGrid').innerHTML=products.slice(0,4).map(productCard).join('');
+  document.getElementById('tab-'+tab).style.display = 'block';
+  if (tab==='favorites') document.getElementById('favoritesGrid').innerHTML = products.slice(0,4).map(productCard).join('');
 }
 
-function showAdminTab(tab,el){
+// ===================== ADMIN TABS =====================
+function showAdminTab(tab, el) {
   document.querySelectorAll('.admin-nav-item').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
-  ['Dashboard','Products','Orders','Customers','Coupons'].forEach(t=>{const e=document.getElementById('admin'+t);if(e)e.style.display='none';});
-  const cap=tab.charAt(0).toUpperCase()+tab.slice(1);
-  const target=document.getElementById('admin'+cap);
-  if(target)target.style.display='block';
+  ['Dashboard','Products','Orders','Customers','Catering'].forEach(t => {
+    const e = document.getElementById('admin'+t); if(e) e.style.display='none';
+  });
+  const cap = tab.charAt(0).toUpperCase() + tab.slice(1);
+  const target = document.getElementById('admin'+cap);
+  if (target) target.style.display = 'block';
 }
 
-function renderAdminProducts(){
-  const el=document.getElementById('adminProductsTable');
-  if(!el)return;
-  el.innerHTML=`<thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Estado</th><th>Acción</th></tr></thead><tbody>${products.map(p=>`<tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">${p.emoji}</span><span>${p.name}</span></div></td><td>${p.cat}</td><td>$${p.price.toLocaleString('es-AR')}</td><td><span class="order-status status-delivered">Activo</span></td><td><button class="edit-btn" onclick="showToast('Editando: ${p.name}')">Editar</button></td></tr>`).join('')}</tbody>`;
-}
-
-function showPage(page){
+// ===================== PAGES =====================
+function showPage(page) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
   window.scrollTo(0,0);
-  if(page==='shop'){renderShopCats();renderShopProducts(products);}
+  if (page==='shop') { renderShopCats(); renderShopProducts(products); }
+  if (page==='admin') renderProductEditList();
 }
 
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2800);
+function scrollToNosotros() {
+  showPage('home');
+  setTimeout(() => document.getElementById('nosotros')?.scrollIntoView({behavior:'smooth'}), 100);
 }
+
+// ===================== TOAST =====================
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// NAV: link admin goes to login
+document.querySelector('.nav-actions').insertAdjacentHTML('afterbegin',
+  '<button class="btn-nav" style="font-size:11px;opacity:0.5" onclick="showPage(\'adminlogin\')">Admin</button>'
+);
 
 init();
 </script>
