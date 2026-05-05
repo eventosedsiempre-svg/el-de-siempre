@@ -1217,7 +1217,7 @@ function confirmOrder(){
   document.getElementById('orderNum').textContent=num;
   const msg=encodeURIComponent(`Hola! Confirmé mi pedido ${num} por $${total.toLocaleString('es-AR')} (envío a ${zone}). ¡Gracias!`);
   document.getElementById('waConfirmBtn').href=`https://wa.me/${WA_NUMBER}?text=${msg}`;
-  enviarASheets({tipo:'pedido',id:num,fecha:new Date().toLocaleDateString('es-AR'),cliente:document.getElementById('ckName').value+' '+document.getElementById('ckLast').value,zona:zone,items:cart.map(i=>i.name+' x'+i.qty).join(', '),total:total,envio:ship,estado:'Pendiente'});
+  enviarASheets({tipo:'pedido',id:num,fecha:new Date().toLocaleDateString('es-AR'),cliente:document.getElementById('ckName').value+' '+document.getElementById('ckLast').value,email:document.getElementById('ckEmail').value,telefono:document.getElementById('ckPhone').value||'—',zona:zone,direccion:(ZONES[selectedZoneKey]?.pickup?'Retiro en local':((document.getElementById('ckStreet')?.value||'')+(document.getElementById('ckCity')?.value?' - '+document.getElementById('ckCity').value:''))),items:itemsList,total:total,envio:ship,estado:'Pendiente'});,id:num,fecha:new Date().toLocaleDateString('es-AR'),cliente:document.getElementById('ckName').value+' '+document.getElementById('ckLast').value,zona:zone,items:cart.map(i=>i.name+' x'+i.qty).join(', '),total:total,envio:ship,estado:'Pendiente'});
   cart=[];selectedZoneKey='';updateCartUI();showPage('confirm');updateAdminStats();
 }
 
