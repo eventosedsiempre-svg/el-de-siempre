@@ -1217,6 +1217,7 @@ function confirmOrder(){
   document.getElementById('orderNum').textContent=num;
   const msg=encodeURIComponent(`Hola! Confirmé mi pedido ${num} por $${total.toLocaleString('es-AR')} (envío a ${zone}). ¡Gracias!`);
   document.getElementById('waConfirmBtn').href=`https://wa.me/${WA_NUMBER}?text=${msg}`;
+  enviarASheets({tipo:'pedido',id:num,fecha:new Date().toLocaleDateString('es-AR'),cliente:document.getElementById('ckName').value+' '+document.getElementById('ckLast').value,zona:zone,items:cart.map(i=>i.name+' x'+i.qty).join(', '),total:total,envio:ship,estado:'Pendiente'});
   cart=[];selectedZoneKey='';updateCartUI();showPage('confirm');updateAdminStats();
 }
 
@@ -1252,6 +1253,7 @@ function submitCatering(){
   appendCateringRow(lead);
   const c=document.getElementById('adminCateringCount');if(c)c.textContent=cateringLeads.length;
   const msg=encodeURIComponent(`Hola El de Siempre! Quiero consultar por catering.\nNombre: ${name}\nZona: ${zone}\nPersonas: ${guests}\nTipo: ${labels[type]}\nTel: ${phone}`);
+  enviarASheets({tipo:'catering',nombre:name,telefono:phone,zona:zone,personas:guests,tipo_evento:labels[type],fecha:new Date().toLocaleDateString('es-AR')});
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,'_blank');
   ['ctName','ctPhone','ctZone','ctGuests'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('ctType').value='';
@@ -1486,7 +1488,7 @@ function showToast(msg){
   const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
   clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2800);
 }
-
+function enviarASheets(datos){if(!SHEETS_WEBHOOK_URL)return;fetch(SHEETS_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(datos)}).catch(()=>{});}
 init();
 </script>
 </body>
